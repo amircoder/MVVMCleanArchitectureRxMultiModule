@@ -1,8 +1,10 @@
-package com.aba.core.base
+package com.aba.core.network
+
+import com.aba.core.network.error.ErrorEntity
 
 sealed class ResultResponse<T> {
     data class Success<T>(val data: T) : ResultResponse<T>()
-    data class Failure<T>(val error: Throwable) : ResultResponse<T>()
+    data class Failure<T>(val error: ErrorEntity) : ResultResponse<T>()
     class Loading <T>: ResultResponse<T>()
 
 

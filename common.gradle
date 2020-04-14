@@ -27,7 +27,7 @@ android {
                         versionCode app.applicationVersionCode
                         versionName app.applicationVersionName
                         testApplicationId app.applicationId
-                        resValue "string", "app_name", "Project X"
+                        resValue "string", "app_name", "TV Series Finder"
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
                 manifestPlaceholders = [deepLinkScheme : appProperties['deepLinkScheme'],
                 deepLinkHost : appProperties['deepLinkHost']]
