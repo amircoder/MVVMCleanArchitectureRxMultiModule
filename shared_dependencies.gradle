@@ -1,0 +1,151 @@
+dependencies{
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation kotlin.kotlin
+            implementation appComponent.appComponent
+
+
+            compileOnly annotation.jsr250
+
+
+            // play
+            implementation play.play
+
+            // Room
+            implementation room.roomRuntime
+            kapt room.compiler
+            implementation room.rx2
+            implementation room.common
+
+
+            //RxJava
+            implementation rx.rxandroid
+            implementation rx.rxjava
+            implementation rx.rx2AndroidSchedulers
+            implementation rx.saveState
+            implementation rx.rxbindingSupport
+            implementation rx.rxbindingAppcompat
+            implementation rx.rxbindingAppcompatKotlin
+            implementation rx.rxbinding
+            implementation rx.rxRelay
+
+
+            // Google Support Libraries
+            implementation mateiral.material
+
+            implementation androidx.recyclerview
+            implementation androidx.cardView
+            implementation androidx.constraintlayout
+            implementation androidx.coreKtx
+
+            //noinspection GradleCompatible
+            implementation androidx.legacySupport
+            implementation androidx.appcompat
+
+            // changed -> 26.1.0
+            implementation androidx.multidex
+
+
+            // architecture components
+            implementation arch.lifecycleExtensions
+
+            // dependency injection
+            implementation dagger.dagger
+            implementation dagger.daggerAndroid
+            implementation dagger.daggerAndroidSupport
+            kapt dagger.daggerCompiler
+            kapt dagger.daggerAndroidProcessor
+
+            // Navigation
+            implementation navigation.fragment
+            implementation navigation.ui
+            implementation navigation.fragmentKtx
+            implementation navigation.uiKtx
+
+            // permissions
+            implementation permissionDexter.dexter
+
+            // chuck
+            debugImplementation chuck.chuck
+            releaseImplementation chuck.chuckNoOp
+
+            // Picasso
+            implementation picasso.picasso
+
+            // apache utils
+            implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+
+}
+
+
+
+
+//dependencies {
+//
+//    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+//    implementation(libraryDependency.kotlin)
+//    implementation(libraryDependency.appcompat)
+////    compileOnly(annotation.jsr250)
+//    // play
+//    implementation(libraryDependency.play)
+//    // Room
+//    implementation(libraryDependency.compiler)
+//    implementation(libraryDependency.rx2)
+//    implementation(libraryDependency.common)
+//    implementation(libraryDependency.roomRuntime)
+//    //RxJava
+//    implementation(libraryDependency.rxandroid)
+//    implementation(libraryDependency.rxjava)
+//    implementation(libraryDependency.rx2AndroidSchedulers)
+//    implementation(libraryDependency.saveState)
+//    implementation(libraryDependency.rxbindingSupport)
+//    implementation(libraryDependency.rxbindingAppcompat)
+//    implementation(libraryDependency.rxbindingAppcompatKotlin)
+//    implementation(libraryDependency.rxbinding)
+//    implementation(libraryDependency.rxRelay)
+//
+//    // retrofit
+//    implementation(libraryDependency.retrofitConverterGson)
+//    implementation(libraryDependency.retrofitRxjavaAdapter)
+//
+//    // Google Support Libraries
+//    implementation(libraryDependency.material)
+//    implementation(libraryDependency.recyclerview)
+//    implementation(libraryDependency.cardView)
+//    implementation(libraryDependency.constraintlayout)
+//    implementation(libraryDependency.coreKtx)
+//
+//    //noinspection GradleCompatible
+//    implementation(libraryDependency.legacySupport)
+//    implementation(libraryDependency.appcompat)
+//
+//    // changed -> 26.1.0
+//    implementation(libraryDependency.multidex)
+//
+//    // architecture components
+//    implementation(libraryDependency.lifecycleExtensions)
+//
+//    // dependency injection
+//    implementation(libraryDependency.dagger)
+//    implementation(libraryDependency.daggerAndroid)
+//    implementation(libraryDependency.daggerAndroidSupport)
+//    implementation(libraryDependency.daggerCompiler)
+//    implementation(libraryDependency.daggerAndroidProcessor)
+//
+//    // Navigation
+//    implementation(libraryDependency.fragment)
+//    implementation(libraryDependency.ui)
+//    implementation(libraryDependency.fragmentKtx)
+//    implementation(libraryDependency.uiKtx)
+//
+//    // permissions
+//    implementation(libraryDependency.dexter)
+//    implementation(libraryDependency.chuck)
+//    implementation(libraryDependency.chuckNoOp)
+//
+//    // Picasso
+//    implementation(libraryDependency.picasso)
+//
+//
+//}
+
+

@@ -1,0 +1,127 @@
+apply plugin: "com.android.application"
+apply from: "../common.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "com.alphacoder.projectx"
+    }
+    
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    productFlavors {
+        eu {
+            applicationIdSuffix ".eu"
+            versionNameSuffix "-eu"
+        }
+
+        usa {
+            applicationIdSuffix ".usa"
+            versionNameSuffix "-usa"
+        }
+
+        mena {
+            applicationIdSuffix ".mena"
+            versionNameSuffix "-mena"
+        }
+        development {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+        }
+        play {
+            applicationIdSuffix ".release"
+            versionNameSuffix "-release"
+        }
+        demo {
+            applicationIdSuffix ".demo"
+            versionNameSuffix "-demo"
+        }
+
+    }
+
+}
+
+
+dependencies {
+    // different flavors of core library for different flavors of app.
+    // Note: Deprecated as of gradle version 3 above, now we could use just usual library implementation/api.
+    api project(":core")
+
+}
+
+
+
+//plugins {
+//    id("com.android.application")
+//    id("common.gradle")
+//
+//}
+//
+//android {
+//
+//    defaultConfig {
+//        applicationId = "com.alphacoder.projectx"
+//    }
+//
+//
+//    buildTypes {
+//        getByName("release") {
+//            minifyEnabled = true
+//            proguardFile(getDefaultProguardFile("proguard-android-optimize.txt"))
+//            proguardFile(file("proguard-rules.pro"))
+//        }
+//
+//        debug {
+//            applicationIdSuffix = ".debug"
+//            versionNameSuffix = "-debug"
+//        }
+//    }
+//
+//    productFlavors {
+//        getByName("eu") {
+//            applicationIdSuffix = ".eu"
+//            versionNameSuffix = "-eu"
+//        }
+//
+//        getByName("usa") {
+//            applicationIdSuffix = ".usa"
+//            versionNameSuffix = "-usa"
+//        }
+//
+//        getByName("mena") {
+//            applicationIdSuffix = ".mena"
+//            versionNameSuffix = "-mena"
+//        }
+//        getByName("development") {
+//            applicationIdSuffix = ".dev"
+//            versionNameSuffix = "-dev"
+//        }
+//        getByName("play") {
+//            applicationIdSuffix = ".release"
+//            versionNameSuffix = "-release"
+//        }
+//        getByName("demo") {
+//            applicationIdSuffix = ".demo"
+//            versionNameSuffix = "-demo"
+//        }
+//
+//
+//    }
+//
+//
+//}
+//
+//
+//dependencies {
+//    api(project(":lib_theme"))
+//}

@@ -1,0 +1,27 @@
+apply plugin: 'com.android.feature'
+apply from: '../common.gradle'
+
+
+dependencies {
+    api project(":core")
+}
+
+
+
+
+
+
+
+
+//
+//plugins {
+//    id("com.android.feature")
+//    id("common.gradle")
+//
+//}
+//
+//dependencies {
+//    api(project(":core"))
+//}
+//
+

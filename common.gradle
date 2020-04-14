@@ -1,0 +1,261 @@
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: '../dependencies.gradle'
+apply from: '../shared_dependencies.gradle'
+apply from: '../shared_test_dependencies.gradle'
+apply from: '../sharedProperties.gradle'
+
+
+// Loading key store credentials file
+def keystorePropertiesFile = rootProject.file("keyStore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+// Loading private app properties
+def appFile = rootProject.file("appProperties.properties")
+def appProperties = new Properties()
+appProperties.load(new FileInputStream(appFile))
+
+android {
+    compileSdkVersion app.compileSdkVersion
+            buildToolsVersion app.buildToolsVersion
+            defaultConfig {
+                minSdkVersion app.minSdkVersion
+                        targetSdkVersion app.targetSdkVersion
+                        versionCode app.applicationVersionCode
+                        versionName app.applicationVersionName
+                        testApplicationId app.applicationId
+                        resValue "string", "app_name", "Project X"
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                manifestPlaceholders = [deepLinkScheme : appProperties['deepLinkScheme'],
+                deepLinkHost : appProperties['deepLinkHost']]
+                // to fix some compiling errors for roboelectric library
+                javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+            }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    testOptions {
+//        reportDir "$rootDir/test-reports"
+//        resultsDir "$rootDir/test-results"
+        unitTests {
+            includeAndroidResources true
+        }
+    }
+
+    compileOptions {
+        // Sets Java compatibility to Java 8
+        sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    //TODO: set different deep link schemes for different product flavors
+    flavorDimensions 'version', 'region'
+    productFlavors {
+        eu {
+            dimension = "region"
+            resValue "string", "app_name", "X Project for EU"
+        }
+
+        usa {
+            dimension = "region"
+            resValue "string", "app_name", "X Project for USA"
+        }
+
+        mena {
+            dimension = "region"
+            resValue "string", "app_name", "X Project for Mena"
+        }
+
+        development {
+            dimension = "version"
+            resConfigs "en", "xxhdpi"
+//            resValue "string", "app_name", "Development Project x"
+            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
+//            applicationId app.applicationId
+//            versionCode 1
+//            versionName '1.0.0'
+        }
+        play {
+            dimension = "version"
+            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
+//            resValue "string", "app_name", "Project x"
+//            applicationId app.applicationId
+//            versionCode 1
+//            versionName '1.0.0'
+
+        }
+        demo {
+            dimension = "version"
+            resConfigs "en", "xxhdpi"
+            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
+//            resValue "string", "app_name", "Demo Project x"
+//            applicationId app.applicationId
+//            versionCode 1
+//            versionName '1.0.0'
+        }
+    }
+
+    // Travers through different flavors and do some operations like ignoring unwanted flavors
+    // or adding some configuration stuff into that like build config, resValues, etc.
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        // To check for a build type instead, use variant.buildType.name == "buildType"
+        if (names.contains("demo")|| names.contains("mena")) {
+            // Gradle ignores any variants that satisfy the conditions above.
+            setIgnore(true)
+        }
+    }
+
+    // Sign in credentials
+    // To change Sign in credentials go to keyStore.properties
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+                    buildConfigField("String", "BASE_URL", "${appProperties['releaseBaseUrl']}")
+        }
+        debug {
+            buildConfigField("String", "BASE_URL", "${appProperties['debugBaseUrl']}")
+            ext.alwaysUpdateBuildId = false
+            debuggable true
+        }
+    }
+
+    // Avoids multiple APKs on debug mode and some other settings to speed up build
+    if (project.hasProperty("devDebug") || project.hasProperty("demoDebug") || project.hasProperty("playDebug")) {
+        splits.api.splits = false
+        splits.density.splits = false
+        aaptOptions.cruncherEnabled = false //disable crunching
+    }
+
+
+}
+
+
+
+//import java.io.FileInputStream
+//import java.util.*
+//
+//plugins {
+//    id("com.android.application")
+//    kotlin("android")
+//    kotlin("android.extensions")
+//    kotlin("kapt")
+//    id("../shared_dependencies.gradle")
+//    id("../shared_test_dependencies.gradle")
+//    id("../sharedProperties.gradle")
+//}
+//
+//// Loading key store credentials file
+//val fis = FileInputStream("keyStore.properties")
+//val keystoreProperties = Properties()
+//keystoreProperties.load(fis)
+//
+//// Loading private app properties
+//val appFile = FileInputStream("appProperties.properties")
+//val appProperties = Properties()
+//appProperties.load(appFile)
+//
+//android {
+//    compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
+//    buildToolsVersion(AndroidConfig.BUILD_TOOLS_VERSION)
+//    defaultConfig {
+//        applicationId = AndroidConfig.ID
+//        minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
+//        targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
+//        versionCode = AndroidConfig.VERSION_CODE
+//        versionName = AndroidConfig.VERSION_NAME
+//
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//    }
+//
+//
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//    }
+//
+//    signingConfigs {
+//        named("release").configure {
+//            keyAlias = keystoreProperties["keyAlias"].toString()
+//            keyPassword = keystoreProperties["keyPassword"].toString()
+//            storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+//            storePassword = keystoreProperties["storePassword"].toString()
+//        }
+//    }
+//
+//    buildTypes {
+//        getByName("release") {
+//            signingConfig = signingConfigs.getByName("release")
+//            buildConfigField("String", "BASE_URL", "${appProperties["releaseBaseUrl"]}")
+//        }
+//        getByName("debug") {
+//            buildConfigField("String", "BASE_URL", "${appProperties["debugBaseUrl"]}")
+//            isDebuggable = true
+//        }
+//    }
+//
+//    flavorDimensions("version", "region")
+//    productFlavors {
+//        create("eu") {
+//            dimension = "region"
+//            resValue("string", "app_name", "X Project for EU")
+//        }
+//
+//        create("usa") {
+//            dimension = "region"
+//            resValue("string", "app_name", "X Project for USA")
+//        }
+//
+//        create("mena") {
+//            dimension = "region"
+//            resValue("string", "app_name", "X Project for Mena")
+//        }
+//
+//        create("development") {
+//            dimension = "version"
+//            resConfigs("en", "xxhdpi")
+//            manifestPlaceholders =
+//                mapOf("deepLinkScheme" to "projectxdevscheme", "deepLinkHost" to "deep.project.x")
+//        }
+//        create("play") {
+//            dimension = "version"
+//            manifestPlaceholders =
+//                mapOf("deepLinkScheme" to "projectxdevscheme", "deepLinkHost" to "deep.project.x")
+//
+//
+//        }
+//        create("demo") {
+//            dimension = "version"
+//            resConfigs("en", "xxhdpi")
+//            manifestPlaceholders =
+//                mapOf("deepLinkScheme" to "projectxdevscheme", "deepLinkHost" to "deep.project.x")
+//            resValue("string", "app_name", "Demo Project x")
+//        }
+//    }
+//
+//    testOptions {
+//        unitTests.isReturnDefaultValues = true
+//        unitTests.isIncludeAndroidResources = true
+//    }
+//
+//
+//
+//}
+//
+//
+
+

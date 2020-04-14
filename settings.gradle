@@ -1,0 +1,6 @@
+rootProject.name='MVVMCleanArchitectureRxMultiModule'
+include ':app'
+include ':core'
+include ':core-test'
+include ':lib-theme'
+
