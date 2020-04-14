@@ -3,6 +3,10 @@ package com.aba.core.di
 import android.app.Application
 import com.aba.core.AppConfig
 import com.aba.core.GlobalConfig
+import com.aba.core.ThemeProvider
+import com.aba.core.navigation.AppFragmentNavigationHelper
+import com.aba.core.navigation.FragmentNavigationHelper
+import com.aba.core.theme.AppThemeProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -18,4 +22,11 @@ class AndroidModule {
     @Singleton
     fun provideConfig(): GlobalConfig = AppConfig()
 
+    @Provides
+    @Singleton
+    fun provideFragmentNavigation(): FragmentNavigationHelper = AppFragmentNavigationHelper()
+
+    @Provides
+    @Singleton
+    fun provideTheme(): ThemeProvider = AppThemeProvider()
 }

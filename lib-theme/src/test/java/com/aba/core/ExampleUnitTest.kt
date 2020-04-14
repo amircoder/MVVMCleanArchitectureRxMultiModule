@@ -1,4 +1,4 @@
-package com.aba.lib_theme
+package com.aba.core
 
 import org.junit.Test
 
