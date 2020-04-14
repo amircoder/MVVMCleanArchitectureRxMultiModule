@@ -1,4 +1,4 @@
-package com.aba.core.app
+package com.aba.core.base
 
 import com.aba.core.di.AppComponent
 import com.aba.core.di.DaggerAppComponent
