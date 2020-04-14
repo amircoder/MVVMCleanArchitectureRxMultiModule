@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularTextView">
+    <attr name="CircularFillColor" format="color"/>
+    </declare-styleable>
+    <attr name="themePrimaryBrandColor" format="reference|color" />
+    <attr name="themePrimaryBrandDarkColor" format="reference|color" />
+    <attr name="themeSecondaryBrandColor" format="reference|color" />
+    <attr name="themeSecondaryBrandDarkColor" format="reference|color" />
+    <attr name="themeTertiaryBrandColor" format="reference|color" />
+    <attr name="themeTertiaryBrandDarkColor" format="reference|color" />
+    <attr name="themeAccentColor" format="reference|color" />
+    <attr name="themePrimaryTextColor" format="reference|color" />
+    <attr name="themeSecondaryTextColor" format="reference|color" />
+</resources>

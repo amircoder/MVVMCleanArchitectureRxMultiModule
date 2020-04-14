@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+<!--    &lt;!&ndash;Base application theme.&ndash;&gt;-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        <item name="colorPrimary">?attr/themePrimaryBrandColor</item>-->
+<!--        <item name="colorPrimaryDark">?attr/themePrimaryBrandDarkColor</item>-->
+<!--        <item name="colorAccent">@color/secondaryTextColor</item>-->
+
+<!--        <item name="android:statusBarColor">?attr/statusBarColor</item>-->
+<!--        <item name="android:textColorPrimary">?attr/themeTextColorPrimary</item>-->
+<!--        <item name="android:textColorHint">@color/grey_3</item>-->
+<!--        <item name="android:alertDialogTheme">@style/AppTheme.WithFont.CustomAlertDialog</item>-->
+<!--        <item name="android:colorEdgeEffect" tools:targetApi="lollipop">@color/grey_3</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.launcherTheme">-->
+<!--        <item name="android:windowBackground">@drawable/splash</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; TextView has a bug when using android:textAllCaps="true" when the app theme includes-->
+<!--     a android:fontFamily property. We're forced to add another style to include this property-->
+<!--     to prevent library code that also implements this property from crashing our app &ndash;&gt;-->
+<!--    <style name="AppTheme.WithFont">-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textStyle">normal</item>-->
+<!--        <item name="android:textColor">@color/primaryTextColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithBoldFont">-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--        <item name="android:textColor">@color/primaryTextColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.PopupTheme" parent="ThemeOverlay.AppCompat.Light" />-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.PreferenceTheme" parent="@style/PreferenceThemeOverlay.v14.Material">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:textColor">@android:color/black</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:textColorSecondary">@android:color/black</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="colorAccent">@android:color/black</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--    <style name="AppTheme.WithFont.ProductProgressDialogStyle" parent="@android:style/Theme.Holo.Light.Dialog">-->
+<!--        <item name="android:windowBackground">@android:color/transparent</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.CommonTextInputTheme">-->
+<!--        <item name="android:textColorHint">@color/secondaryTextColor</item>-->
+<!--        <item name="colorAccent">@color/primaryTextColor</item>-->
+<!--        <item name="colorControlNormal">@color/secondaryTextColor</item>-->
+<!--        <item name="colorControlActivated">@color/secondaryTextColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.TextInputErrorAppearance" parent="@android:style/TextAppearance">-->
+<!--        <item name="android:textColor">@color/error</item>-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:textStyle">normal</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseToolbar" parent="ThemeOverlay.AppCompat.Light">-->
+<!--        <item name="android:layout_width">match_parent</item>-->
+<!--        <item name="android:minHeight">@dimen/default_toolbar_view_height</item>-->
+<!--        <item name="android:layout_height">@dimen/default_toolbar_view_height</item>-->
+<!--        <item name="android:background">?attr/navBarColor</item>-->
+<!--        <item name="android:elevation" tools:targetApi="lollipop">0dp</item>-->
+<!--        <item name="android:theme">@style/AppTheme.WithFont.BaseToolbarTheme</item>-->
+<!--        <item name="titleTextColor">?attr/toolbarTitleColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseToolbarTheme" parent="ThemeOverlay.AppCompat">-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--        <item name="android:textColorSecondary">?attr/toolbarTitleColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseToolbar.AddressLookupToolbar">-->
+<!--        <item name="android:background">@color/white</item>-->
+<!--        <item name="android:textColorSecondary">@color/white</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SelectableItemBackground">-->
+<!--        <item name="android:theme">@style/AppTheme.WithFont.SelectableItemTheme</item>-->
+<!--        <item name="android:foreground">?attr/selectableItemBackground</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SelectableItemTheme">-->
+<!--        <item name="colorControlHighlight">@color/limestone_10</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.StarRatingBar" parent="@android:style/Widget.DeviceDefault.RatingBar.Indicator">-->
+<!--        <item name="android:progressDrawable">?attr/starRatingBarSelector</item>-->
+<!--    </style>-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.StarRatingBarNotSelected" parent="@android:style/Widget.DeviceDefault.RatingBar.Indicator">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:progressDrawable">@drawable/ratingbar_selector_images_not_selected&ndash;&gt;-->
+<!--&lt;!&ndash;        </item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.CustomProgressBar" parent="android:Widget.ProgressBar.Horizontal">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:indeterminateOnly">false</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:progressDrawable">@drawable/custom_progress_bar_horizontal</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;Zeplin styles&ndash;&gt;-->
+
+<!--    <style name="AppTheme.WithFont.Callout1">-->
+<!--        <item name="android:textSize">22sp</item>-->
+<!--        <item name="android:gravity">end</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Callout2">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Callout3">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textColor">@color/grey_2</item>-->
+<!--        <item name="android:gravity">end</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Callout4">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:gravity">end</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Callout5">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textColor">?attr/themePrimaryBrandColor</item>-->
+<!--        <item name="android:gravity">start</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Callout6">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textColor">?attr/themePrimaryBrandColor</item>-->
+<!--        <item name="android:gravity">start</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Title">-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--        <item name="android:lines">1</item>-->
+<!--        <item name="android:ellipsize">end</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.NavSubTitle">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:lines">1</item>-->
+<!--        <item name="android:ellipsize">end</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SubHeader">-->
+<!--        <item name="android:textSize">18sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SubHeader.Medium">-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Headline">-->
+<!--        <item name="android:textSize">18sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Label1">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:textColor">@color/grey_2</item>-->
+<!--        <item name="android:lineSpacingExtra">4sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Label2">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:lineSpacingExtra">4sp</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; todo check where this is used: weird text colour &ndash;&gt;-->
+<!--    <style name="AppTheme.WithFont.Label3">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:textColor">#2e2e2e</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body" />-->
+
+<!--    <style name="AppTheme.WithFont.Body.1">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.1.Highlighted">-->
+<!--        <item name="android:textColor">?attr/themePrimaryBrandColor</item>-->
+<!--        <item name="android:lineSpacingExtra">8sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.1.Medium">-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.1.Light">-->
+<!--        <item name="android:fontFamily">@font/goodhome_light</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.1.White">-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.1.ML">-->
+<!--        <item name="android:textColor">#212121</item>-->
+<!--        <item name="android:lineSpacingExtra">8sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.2">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_light</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.2.ML">-->
+<!--        <item name="android:lineSpacingExtra">8sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.3">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.3.Tertiary">-->
+<!--        <item name="android:textColor">@color/grey_2</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.3.ML">-->
+<!--        <item name="android:lineSpacingExtra">6sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Body.3.ML.MatchTextView">-->
+<!--        <item name="android:layout_height">@dimen/general_header_height</item>-->
+<!--        <item name="android:gravity">center_vertical</item>-->
+<!--        <item name="android:maxLines">2</item>-->
+<!--        <item name="android:padding">@dimen/margin_medium</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Option1">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_light</item>-->
+<!--        <item name="android:textColor">@color/grey_2</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Option1.Selected">-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.Option3">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; todo only in item_navigation_basket Extract?&ndash;&gt;-->
+<!--    <style name="AppTheme.WithFont.BasketNumber">-->
+<!--        <item name="android:textSize" tools:ignore="SpUsage">11dp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--        <item name="android:textColor">?attr/bottomTabBasketItemCountTextColor</item>-->
+<!--        <item name="android:gravity">center</item>-->
+<!--        <item name="android:maxLines">1</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; todo local to promotion &ndash;&gt;-->
+<!--    <style name="AppTheme.WithFont.StockMessagingAlternative">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textColor">?attr/themePrimaryBrandColor</item>-->
+<!--        <item name="android:lineSpacingExtra">7sp</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; todo local to product_info &ndash;&gt;-->
+<!--    <style name="AppTheme.WithFont.Bullets">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:textColor">@color/primaryTextColor</item>-->
+<!--        <item name="android:lineSpacingExtra">9sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SupportingStoreInfo">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:textColor">@color/secondaryTextColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.StockMessagingRegular">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SupportingText1">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">4sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SupportingText2">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SupportingText2.Tertiary">-->
+<!--        <item name="android:textColor">@color/grey_2</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SupportingText4">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:textColor">@color/grey_2</item>-->
+<!--        <item name="android:lineSpacingExtra">8sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.WarningBoxText">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseButton">-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--        <item name="android:textSize">@dimen/text_small</item>-->
+<!--        <item name="android:maxHeight">@dimen/default_button_height</item>-->
+<!--        <item name="android:layout_marginTop">@dimen/margin_small</item>-->
+<!--        <item name="android:layout_marginBottom">@dimen/margin_small</item>-->
+<!--        <item name="android:layout_marginStart">@dimen/margin_small</item>-->
+<!--        <item name="android:layout_marginEnd">@dimen/margin_small</item>-->
+<!--        <item name="android:layout_height">@dimen/default_button_height</item>-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:paddingStart">@dimen/default_button_padding</item>-->
+<!--        <item name="android:paddingEnd">@dimen/default_button_padding</item>-->
+<!--        <item name="android:stateListAnimator">@drawable/button_press_animator</item>-->
+<!--        <item name="android:textAllCaps">false</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseButton.RoundedButton">-->
+<!--        <item name="android:background">@drawable/rounded_button</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseButton.PrimaryButton">-->
+<!--        <item name="android:background">@drawable/primary_button</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseButton.PrimaryButton.WithoutMargin">-->
+<!--        <item name="android:background">@drawable/primary_button</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:layout_marginStart">0dp</item>-->
+<!--        <item name="android:layout_marginTop">0dp</item>-->
+<!--        <item name="android:layout_marginEnd">0dp</item>-->
+<!--        <item name="android:layout_marginBottom">0dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BaseButton.PrimaryButton.Small">-->
+<!--        <item name="android:layout_height">@dimen/default_button_small_height</item>-->
+<!--    </style>-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.BaseButton.SecondaryButton">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:background">@drawable/secondary_button</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:textColor">@color/white</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.BaseButton.SecondaryButton.WithoutMargin">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:background">@drawable/secondary_button</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:textColor">@color/white</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:layout_marginStart">0dp</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:layout_marginTop">0dp</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:layout_marginEnd">0dp</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:layout_marginBottom">0dp</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.BaseButton.SecondaryButton.Small">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:layout_height">@dimen/default_button_small_height</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.BaseButton.TertiaryButton">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:background">@drawable/tertiary_button</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:textColor">@color/primaryTextColor</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.BaseButton.TertiaryButton.Small">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:layout_height">@dimen/default_button_small_height</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <style name="AppTheme.WithFont.BaseButton.QuaternaryButton">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:background">@drawable/quaternary_button</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:textColor">?attr/barcodeScannerViewsTextColor</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+
+<!--    <style name="AppTheme.WithFont.editText" parent="Widget.AppCompat.EditText">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:gravity">center</item>-->
+<!--&lt;!&ndash;        <item name="android:textCursorDrawable">@drawable/primary_dark_text_cursor</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="android:background">@drawable/add_to_basket_quantity_edit_text_background</item>&ndash;&gt;-->
+<!--        <item name="android:inputType">text</item>-->
+<!--        <item name="android:imeOptions">actionDone</item>-->
+<!--        <item name="android:maxLines">14sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.CustomAlertDialog" parent="Base.Theme.AppCompat.Light.Dialog">-->
+<!--        <item name="colorAccent">?attr/themePrimaryBrandColor</item>-->
+<!--        <item name="android:textColorSecondary">@color/grey_2</item>-->
+<!--        <item name="textColorAlertDialogListItem">@color/primaryTextColor</item>-->
+
+<!--        <item name="android:fadeScrollbars">false</item>-->
+
+<!--        <item name="listPreferredItemHeight">0dp</item>-->
+<!--        <item name="listPreferredItemHeightSmall">0dp</item>-->
+<!--        <item name="listPreferredItemHeightLarge">0dp</item>-->
+<!--        <item name="listPreferredItemPaddingLeft">24dp</item>-->
+<!--        <item name="listPreferredItemPaddingRight">24dp</item>-->
+
+<!--        <item name="textAppearanceListItem">@style/AppTheme.WithFont.CustomAlertDialogListItem-->
+<!--        </item>-->
+<!--        <item name="textAppearanceListItemSmall">-->
+<!--            @style/AppTheme.WithFont.CustomAlertDialogListItem-->
+<!--        </item>-->
+
+<!--        <item name="android:dividerHeight">8dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.CustomAlertDialogListItem" parent="TextAppearance.AppCompat">-->
+<!--        <item name="android:textSize">15sp</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--        <item name="android:maxLines">100</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.CustomAlertDialogTitle" parent="Base.DialogWindowTitle.AppCompat">-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--        <item name="android:maxLines">100</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; todo clubcard localised to module? &ndash;&gt;-->
+<!--    <style name="AppTheme.WithFont.ClubCardTitleStyle" parent="TextAppearance.AppCompat">-->
+<!--        <item name="android:textSize">30sp</item>-->
+<!--        <item name="android:includeFontPadding">false</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:lines">1</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.ClubCardTitleStyle.Regular">-->
+<!--        <item name="android:fontFamily">@font/goodhome_light</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.ClubCardTitleStyle.Heading">-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.ClubCardTitleStyle.Body">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.ClubCardTitleStyle.Heading.RetryButton">-->
+<!--        <item name="android:textColor">?attr/themePrimaryBrandColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.BottomNavigationTitle">-->
+<!--        <item name="android:textSize" tools:ignore="SpUsage">@dimen/text_micro</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+<!--        <item name="android:textColor">@color/colorAccent</item>-->
+<!--        <item name="android:layout_gravity">center_horizontal</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.SearchViewTheme" parent="ThemeOverlay.AppCompat.ActionBar">-->
+<!--        <item name="android:textColorHint">?attr/searchBoxTextColorHint</item>-->
+<!--        <item name="android:textCursorDrawable">@drawable/text_cursor_themed</item>-->
+<!--        <item name="android:textColorPrimary">?attr/toolbarTitleColor</item>-->
+<!--        <item name="android:textColor">?attr/toolbarTitleColor</item>-->
+<!--        <item name="android:fontFamily">@font/goodhome_regular</item>-->
+
+<!--        <item name="colorControlNormal">?attr/toolbarTitleColor</item>-->
+<!--        <item name="colorControlActivated">?attr/toolbarTitleColor</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.AddressSearch">-->
+<!--        <item name="android:layout_width">0dp</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:layout_weight">1</item>-->
+<!--        <item name="android:layout_marginStart">@dimen/margin_large</item>-->
+<!--        <item name="android:background">@null</item>-->
+<!--        <item name="android:fadingEdge">horizontal</item>-->
+<!--        <item name="android:maxLines">1</item>-->
+<!--        <item name="android:inputType">textNoSuggestions|textCapWords</item>-->
+<!--    </style>-->
+
+<!--    <style name="AppTheme.WithFont.AddressSearch.Active">-->
+<!--        <item name="android:textCursorDrawable">@drawable/text_cursor_themed</item>-->
+<!--        <item name="android:textColor">?attr/toolbarTitleColor</item>-->
+<!--        <item name="android:textColorHint">?attr/searchBoxTextColorHint</item>-->
+<!--    </style>-->
+
+
+
+<!--    &lt;!&ndash; Test theme only &ndash;&gt;-->
+<!--    <style name="AppTheme.TEST">-->
+<!--        <item name="themePrimaryBrandColor">@color/white</item>-->
+<!--        <item name="themePrimaryBrandDarkColor">@color/white</item>-->
+<!--        <item name="themeSecondaryBrandColor">@color/white</item>-->
+<!--        <item name="themeSecondaryBrandDarkColor">#fff</item>-->
+<!--        <item name="themeTertiaryBrandColor">@color/white</item>-->
+<!--        <item name="themeTertiaryBrandDarkColor">@color/limestone_10</item>-->
+
+<!--        <item name="brandLogo">@drawable/chuck_ic_delete_white_24dp</item>-->
+
+<!--        <item name="themeTextColorPrimary">@color/primaryTextColor</item>-->
+
+<!--        <item name="statusBarColor">#fff</item>-->
+<!--        <item name="navBarColor">@color/white</item>-->
+<!--        <item name="navBarIconColor">@color/grey_2</item>-->
+<!--        <item name="toolbarTitleColor">@color/primaryTextColor</item>-->
+
+<!--        <item name="tabBarColor">@color/limestone_10</item>-->
+<!--        <item name="bottomTabItemActive">@color/grey_2</item>-->
+<!--        <item name="bottomTabItemInactive">@color/grey_3</item>-->
+<!--        <item name="bottomTabBasketItemCountTextColor">@color/grey_2</item>-->
+
+<!--        <item name="buttonCornerRadius">0dp</item>-->
+<!--        <item name="primaryButtonColor">@color/white</item>-->
+<!--        <item name="primaryButtonPressedColor">@color/white</item>-->
+<!--        <item name="primaryButtonRippleColor">@color/white</item>-->
+<!--        <item name="textButtonColor">@color/white</item>-->
+<!--        <item name="brandTypeColor">@color/white</item>-->
+<!--        <item name="brandIconColor">@color/white</item>-->
+<!--        <item name="reviewStarIconColor">@color/white</item>-->
+
+<!--        <item name="searchBoxBackgroundColor">@color/white</item>-->
+<!--        <item name="searchBoxTextColorHint">@color/grey_3</item>-->
+<!--        <item name="searchBoxElevation">0dp</item>-->
+
+<!--        <item name="homeButtonsBackground">@color/grey_8</item>-->
+<!--        <item name="homeButtonBackgroundColor">@color/white</item>-->
+<!--        <item name="homeButtonIconColor">@color/white</item>-->
+
+<!--        <item name="starRatingEmpty">@drawable/chuck_ic_delete_white_24dp</item>-->
+<!--        <item name="starRatingHalf">@drawable/chuck_ic_delete_white_24dp</item>-->
+<!--        <item name="starRatingFull">@drawable/chuck_ic_delete_white_24dp</item>-->
+
+<!--        <item name="loyaltyCardBackground">@drawable/chuck_ic_delete_white_24dp</item>-->
+<!--    </style>-->
+</resources>
