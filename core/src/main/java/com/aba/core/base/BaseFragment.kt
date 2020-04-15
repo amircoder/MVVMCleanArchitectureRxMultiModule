@@ -11,6 +11,8 @@ abstract class BaseFragment: DaggerFragment() {
     @Inject
     lateinit var fragmentNavigator: FragmentNavigationHelper
 
+    protected abstract val contentResourceId: Int
+
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)

@@ -7,12 +7,12 @@ apply plugin: 'kotlin-kapt'
 
 dependencies {
     api project(":lib-theme")
-    annotationProcessor autoValue.autoValue
+//    annotationProcessor autoValue.autoValue
 
     // I need to implement test dependencies instead of testImplementation
     // as i did in the shared_test_dependencies file
-    implementation 'org.mockito:mockito-inline:3.2.4'
-    implementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'
+//    implementation 'org.mockito:mockito-inline:3.2.4'
+//    implementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'
     implementation powerMock.powermockApiMockito2
     implementation powerMock.powermockJunit4
 
