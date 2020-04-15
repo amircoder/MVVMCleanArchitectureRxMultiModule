@@ -6,6 +6,6 @@ class MainActivity: BaseActivity() {
     override val contentResourceId: Int
         get() = R.layout.activity_main
     // features needed to be added
-    // MVVM clean-architecture RX Flavors multi-binding motion-layout KOTLIN-DSL git-from-start
+    // MVVM clean-architecture RX Flavors multi-binding motion-layout
 
 }

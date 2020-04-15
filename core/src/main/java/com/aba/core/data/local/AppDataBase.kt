@@ -6,11 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.aba.core.BuildConfig
 
-@Database(
-    entities = [],
-    version = 1,
-    exportSchema = false
-)
+//@Database(
+//    entities = [],
+//    version = 1,
+//    exportSchema = false
+//)
 abstract class AppDataBase : RoomDatabase() {
 
     companion object {

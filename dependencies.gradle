@@ -170,5 +170,9 @@ ext.mateiral = [
 
 def okhttp = "4.4.0"
 ext.okhttp_interceptor = [
-        "interceptor" : "com.squareup.okhttp3:logging-interceptor:$okhttp"
+        "interceptor" : "com.squareup.okhttp3:logging-interceptor:$okhttp",
+]
+
+ext.okhttpMockServer = [
+        "mockWebServer" : "com.squareup.okhttp3:mockwebserver:$okhttp"
 ]
