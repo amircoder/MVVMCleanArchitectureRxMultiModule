@@ -5,5 +5,6 @@ object DataConstants {
         object HttpStatusCode {
             const val UNSATISFIABLE_REQUEST = 533
         }
+        const val TIME_OUT = 10
     }
 }
