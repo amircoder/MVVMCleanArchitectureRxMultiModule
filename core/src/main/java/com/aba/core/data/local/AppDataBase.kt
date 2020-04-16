@@ -4,13 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.aba.core.BuildConfig
+import com.aba.core.data.local.convertor.ListConverter
+import com.aba.core.data.local.dao.SearchDao
+import com.aba.core.data.model.TVSearchResponse
 
-//@Database(
-//    entities = [],
-//    version = 1,
-//    exportSchema = false
-//)
+@Database(
+    entities = [(TVSearchResponse::class)],
+    version = 1,
+    exportSchema = false
+)
+@TypeConverters(ListConverter::class)
 abstract class AppDataBase : RoomDatabase() {
 
     companion object {
@@ -26,4 +31,6 @@ abstract class AppDataBase : RoomDatabase() {
                 .allowMainThreadQueries()
                 .build()
     }
+
+    abstract fun getSearchDao(): SearchDao
 }

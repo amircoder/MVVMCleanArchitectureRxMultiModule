@@ -7,6 +7,8 @@ android {
     defaultConfig {
         buildConfigField("String", "TERMS_AND_CONDITIONS_LINK", "${sharedProperties['termsAndConditionsLink']}")
         buildConfigField("String", "DB_NAME", "${sharedProperties['dataBaseName']}")
+        buildConfigField("String", "SEARCH_TABLE_NAME", "${sharedProperties['SEARCH_TABLE_NAME']}")
+
     }
 }
 

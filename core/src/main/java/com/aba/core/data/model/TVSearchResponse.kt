@@ -1,116 +1,126 @@
 package com.aba.core.data.model
 
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import com.aba.core.BuildConfig
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = BuildConfig.SEARCH_TABLE_NAME, primaryKeys = ["id"] )
 data class TVSearchResponse(
     @SerializedName("score")
-    val score: Double ,
+    var score: Double ,
     @SerializedName("show")
-    val show: Show
+    @Embedded
+    var show: Show
 ) {
     data class Show(
-        @SerializedName("externals")
-        val externals: Externals? ,
+//        @SerializedName("externals")
+//        var externals: Externals? ,
         @SerializedName("genres")
-        val genres: List<String?>? ,
+        var genres: List<String>? ,
         @SerializedName("id")
-        val id: Int,
+        var id: Int,
+        @Embedded
         @SerializedName("image")
-        val image: Image? ,
+        var image: Image ,
         @SerializedName("language")
-        val language: String? = "",
+        var language: String = "" ,
+        @Embedded
         @SerializedName("_links")
-        val links: Links?,
+        var links: Links?,
         @SerializedName("name")
-        val name: String,
-        @SerializedName("network")
-        val network: Network? ,
+        var name: String,
+//        @SerializedName("network")
+//        var network: Network? ,
         @SerializedName("officialSite")
-        val officialSite: String,
-        @SerializedName("premiered")
-        val premiered: String,
+        var officialSite: String,
+//        @SerializedName("premiered")
+//        var premiered: String,
+        @Embedded
         @SerializedName("rating")
-        val rating: Rating? ,
-        @SerializedName("runtime")
-        val runtime: Int,
-        @SerializedName("schedule")
-        val schedule: Schedule?,
+        var rating: Rating? ,
+//        @SerializedName("runtime")
+//        var runtime: Int,
+//        @SerializedName("schedule")
+//        var schedule: Schedule?,
         @SerializedName("status")
-        val status: String,
-        @SerializedName("summary")
-        val summary: String,
+        var status: String,
+//        @SerializedName("summary")
+//        var summary: String,
         @SerializedName("type")
-        val type: String,
-        @SerializedName("updated")
-        val updated: Int? = 0,
+        var type: String,
+//        @SerializedName("updated")
+//        var updated: Int? = 0,
         @SerializedName("url")
-        val url: String,
-        @SerializedName("weight")
-        val weight: Int
+        var url: String
+//        @SerializedName("weight")
+//        var weight: Int
     )
 
     data class Image(
         @SerializedName("medium")
-        val medium: String,
+        var medium: String,
         @SerializedName("original")
-        val original: String
+        var original: String
     )
 
-    data class Network(
-        @SerializedName("country")
-        val country: Country? ,
-        @SerializedName("id")
-        val id: Int? ,
-        @SerializedName("name")
-        val name: String?
-    )
+//    data class Network(
+//        @SerializedName("country")
+//        var country: Country? ,
+//        @SerializedName("id")
+//        var id: Int? ,
+//        @SerializedName("name")
+//        var name: String = ""
+//    )
 
-    data class Externals(
-        @SerializedName("imdb")
-        val imdb: String?,
-        @SerializedName("thetvdb")
-        val thetvdb: Int? ,
-        @SerializedName("tvrage")
-        val tvrage: Int?
-    )
+//    data class Externals(
+//        @SerializedName("imdb")
+//        var imdb: String = "",
+//        @SerializedName("thetvdb")
+//        var thetvdb: Int? ,
+//        @SerializedName("tvrage")
+//        var tvrage: Int?
+//    )
 
-    data class Country(
-        @SerializedName("code")
-        val code: String? ,
-        @SerializedName("name")
-        val name: String? ,
-        @SerializedName("timezone")
-        val timezone: String?
-    )
+//    data class Country(
+//        @SerializedName("code")
+//        var code: String = "" ,
+//        @SerializedName("name")
+//        var name: String = "" ,
+//        @SerializedName("timezone")
+//        var timezone: String = ""
+//    )
 
     data class Links(
         @SerializedName("previousepisode")
-        val previousepisode: PreviousEpisode? ,
+        @Embedded
+        var previousepisode: PreviousEpisode ,
+        @Embedded
         @SerializedName("self")
-        val self: Self?
+        var self: Self
     )
 
 
     data class Rating(
         @SerializedName("average")
-        val average: Double?
+        var average: Double?
     )
 
-    data class Schedule(
-        @SerializedName("days")
-        val days: List<String?>?,
-        @SerializedName("time")
-        val time: String?
-    )
+//    data class Schedule(
+//        @SerializedName("days")
+//        var days: List<String = "">?,
+//        @SerializedName("time")
+//        var time: String = ""
+//    )
 
     data class Self(
         @SerializedName("href")
-        val href: String?
+        var selfHref: String = ""
     )
 
     data class PreviousEpisode(
         @SerializedName("href")
-        val href: String?
+        var PreviousEpisodeHref: String = ""
     )
 }

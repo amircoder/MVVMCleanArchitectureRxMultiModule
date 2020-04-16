@@ -1,6 +1,6 @@
 package com.aba.core.data.remote
 
-import com.aba.core.data.SOME_TEST
+import com.SOME_TEXT
 import com.aba.core.data.SearchDataHelper
 import com.aba.core.data.model.TVSearchResponse
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -65,7 +65,7 @@ class TVMazeServiceTest {
      * When
      */
     private fun whenOnSearch() {
-        response = subject.search(SOME_TEST).test()
+        response = subject.search(SOME_TEXT).test()
     }
 
 
