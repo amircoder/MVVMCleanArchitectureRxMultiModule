@@ -1,4 +1,4 @@
-package com.aba.core.data.remote
+package com.aba.core.data.net.service
 
 import com.aba.core.data.model.TVSearchResponse
 import io.reactivex.Observable
