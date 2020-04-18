@@ -7,5 +7,5 @@ interface BaseUseCase<PARAMS: Params, result> {
 
     fun execute(params: PARAMS): Observable<result>
 
-    abstract class Params
+    interface Params
 }

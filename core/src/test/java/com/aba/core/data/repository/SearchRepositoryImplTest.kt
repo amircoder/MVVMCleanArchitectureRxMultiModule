@@ -24,7 +24,6 @@ import java.lang.Exception
 @RunWith(MockitoJUnitRunner::class)
 class SearchRepositoryImplTest {
 
-    //    private lateinit var result: ResultResponse<List<SearchModel>>
     private lateinit var result: TestObserver<ResultResponse<List<SearchModel>>>
     private val someException = Exception()
 
@@ -37,9 +36,6 @@ class SearchRepositoryImplTest {
     @Mock
     private lateinit var mockSearchMapper: SearchMapper
 
-    @Mock
-    private lateinit var mockWrapper: SuccessResultWrapper<List<SearchModel>>
-
     @InjectMocks
     private lateinit var subject: SearchRepositoryImpl
 
@@ -51,9 +47,9 @@ class SearchRepositoryImplTest {
 
     @Before
     fun setup() {
-        given(mockSearchMapper.map(SOME_SEARCH_RESPONSE_ITEMS)).willReturn(SOME_SEARCH_MODELS)
-        given(mockSearchMapper.map(SOME_OTHER_SEARCH_RESPONSE_ITEMS)).willReturn(SOME_OTHER_SEARCH_MODELS)
+        prepareMapper()
     }
+
 
     @Test
     fun `givenLocalResponseSuccessful andGivenRemoteResponseSuccessful whenOnSearch thenResultIsSuccessful`() {
@@ -205,6 +201,18 @@ class SearchRepositoryImplTest {
         result
             .assertNotComplete()
             .assertValues(ResultResponse.Success(listOf()))
+    }
+
+
+    /*
+     * Helper
+     */
+
+    private fun prepareMapper() {
+        given(mockSearchMapper.map(SOME_SEARCH_RESPONSE_ITEMS)).willReturn(SOME_SEARCH_MODELS)
+        given(mockSearchMapper.map(SOME_OTHER_SEARCH_RESPONSE_ITEMS)).willReturn(
+            SOME_OTHER_SEARCH_MODELS
+        )
     }
 
 }
