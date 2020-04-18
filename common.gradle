@@ -67,11 +67,6 @@ android {
             resValue "string", "app_name", "X Project for USA"
         }
 
-        mena {
-            dimension = "region"
-            resValue "string", "app_name", "X Project for Mena"
-        }
-
         development {
             dimension = "version"
             resConfigs "en", "xxhdpi"
@@ -85,16 +80,6 @@ android {
             dimension = "version"
             manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
 //            resValue "string", "app_name", "Project x"
-//            applicationId app.applicationId
-//            versionCode 1
-//            versionName '1.0.0'
-
-        }
-        demo {
-            dimension = "version"
-            resConfigs "en", "xxhdpi"
-            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
-//            resValue "string", "app_name", "Demo Project x"
 //            applicationId app.applicationId
 //            versionCode 1
 //            versionName '1.0.0'

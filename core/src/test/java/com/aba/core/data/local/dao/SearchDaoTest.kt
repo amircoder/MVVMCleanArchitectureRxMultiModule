@@ -47,7 +47,7 @@ class SearchDaoTest {
      * When
      */
     private fun whenOnInsert() {
-        subject.insert(SOME_ITEMS)
+        subject.insert(SOME_SEARCH_RESPONSE_ITEMS)
     }
 
     private fun whenGetSearchResults() {

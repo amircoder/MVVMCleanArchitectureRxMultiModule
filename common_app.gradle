@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.alphacoder.projectx"
     }
-    
+
 
     buildTypes {
         release {
@@ -30,10 +30,6 @@ android {
             versionNameSuffix "-usa"
         }
 
-        mena {
-            applicationIdSuffix ".mena"
-            versionNameSuffix "-mena"
-        }
         development {
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
@@ -41,10 +37,6 @@ android {
         play {
             applicationIdSuffix ".release"
             versionNameSuffix "-release"
-        }
-        demo {
-            applicationIdSuffix ".demo"
-            versionNameSuffix "-demo"
         }
 
     }
@@ -58,7 +50,6 @@ dependencies {
     api project(":core")
 
 }
-
 
 
 //plugins {

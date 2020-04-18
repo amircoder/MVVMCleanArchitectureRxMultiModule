@@ -17,8 +17,8 @@ abstract class ObservableUseCase<PARAMS : Params, result>
         buildObservable(params)
             .subscribeOn(scheduler.ioScheduler)
             .observeOn(scheduler.mainScheduler)
-            .onErrorReturn {
-                ResultResponse.Failure(errorContainer.getError(it))
-            }
+//            .onErrorReturn {
+//                ResultResponse.Failure(errorContainer.getError(it))
+//            }
 
 }

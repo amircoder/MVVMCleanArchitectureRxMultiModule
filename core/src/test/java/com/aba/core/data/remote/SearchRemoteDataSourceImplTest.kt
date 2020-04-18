@@ -1,6 +1,6 @@
 package com.aba.core.data.remote
 
-import com.SOME_ITEMS
+import com.SOME_SEARCH_RESPONSE_ITEMS
 import com.SOME_TEXT
 import com.aba.core.data.model.TVSearchResponse
 import com.aba.core.data.net.service.TVMazeService
@@ -48,7 +48,7 @@ class SearchRemoteDataSourceImplTest {
      */
     private fun givenResponseIsSuccessful() {
         given(mockService.search(SOME_TEXT)).willReturn(
-            Observable.just(SOME_ITEMS)
+            Observable.just(SOME_SEARCH_RESPONSE_ITEMS)
         )
     }
 
@@ -73,7 +73,7 @@ class SearchRemoteDataSourceImplTest {
     private fun thenResultIsSuccessful() = with(result){
         assertComplete()
             .assertNoErrors()
-            .assertValue(SOME_ITEMS)
+            .assertValue(SOME_SEARCH_RESPONSE_ITEMS)
     }
 
     private fun thenRequestNotCompleted() = with(result){
