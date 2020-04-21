@@ -18,9 +18,9 @@ allprojects {
     repositories {
         maven("https://www.jitpack.io")
         maven("https://maven.google.com")
+        maven("http://dl.bintray.com/twistedequations/maven")
         google()
         jcenter()
-        maven("http://dl.bintray.com/twistedequations/maven")
 
     }
 }

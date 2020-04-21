@@ -1,4 +1,4 @@
-package com
+package com.aba.core
 
 import com.aba.core.data.model.TVSearchResponse
 import com.aba.core.domain.data.SearchModel
@@ -103,16 +103,24 @@ val SOME_OTHER_SEARCH_MODEL = SearchModel(
 )
 
 @JvmField
-val SOME_SEARCH_RESPONSE_ITEMS: List<TVSearchResponse> = Collections.singletonList(SOME_ITEM)
+val SOME_SEARCH_RESPONSE_ITEMS: List<TVSearchResponse> = Collections.singletonList(
+    SOME_ITEM
+)
 
 @JvmField
 val SOME_OTHER_SEARCH_RESPONSE_ITEMS: List<TVSearchResponse> =
     Collections.singletonList(SOME_OTHER_ITEM)
 
 @JvmField
-val SOME_COMBINED_SEARCH_RESPONSE_ITEMS: List<TVSearchResponse> = listOf(SOME_ITEM, SOME_OTHER_ITEM)
+val SOME_COMBINED_SEARCH_RESPONSE_ITEMS: List<TVSearchResponse> = listOf(
+    SOME_ITEM,
+    SOME_OTHER_ITEM
+)
 
 @JvmField
 val SOME_SEARCH_MODELS = Collections.singletonList(SOME_SEARCH_MODEL)
 val SOME_OTHER_SEARCH_MODELS = Collections.singletonList(SOME_OTHER_SEARCH_MODEL)
-val SOME_COMBINED_SEARCH_MODELS = listOf(SOME_SEARCH_MODEL, SOME_OTHER_SEARCH_MODEL)
+val SOME_COMBINED_SEARCH_MODELS = listOf(
+    SOME_SEARCH_MODEL,
+    SOME_OTHER_SEARCH_MODEL
+)

@@ -1,3 +1,4 @@
 <resources>
     <string name="location">Earth</string>
+    <string name="title_listing_feature">Listing</string>
 </resources>

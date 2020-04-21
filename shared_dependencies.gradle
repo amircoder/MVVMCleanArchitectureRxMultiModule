@@ -1,82 +1,82 @@
-dependencies{
+dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation kotlin.kotlin
-            implementation appComponent.appComponent
+    implementation appComponent.appComponent
 
 
-            compileOnly annotation.jsr250
+    compileOnly annotation.jsr250
 
 
-            // play
-            implementation play.play
+    // play
+    implementation play.play
 
-            // Room
-            implementation room.roomRuntime
-            kapt room.compiler
-            implementation room.rx2
-            implementation room.common
-
-
-            //RxJava
-            implementation rx.rxandroid
-            implementation rx.rxjava
-            implementation rx.rx2AndroidSchedulers
-            implementation rx.saveState
-            implementation rx.rxbindingSupport
-            implementation rx.rxbindingAppcompat
-            implementation rx.rxbindingAppcompatKotlin
-            implementation rx.rxbinding
-            implementation rx.rxRelay
+    // Room
+    implementation room.roomRuntime
+    kapt room.compiler
+    implementation room.rx2
+    implementation room.common
 
 
-            // Google Support Libraries
-            implementation mateiral.material
-
-            implementation androidx.recyclerview
-            implementation androidx.cardView
-            implementation androidx.constraintlayout
-            implementation androidx.coreKtx
-
-            //noinspection GradleCompatible
-            implementation androidx.legacySupport
-            implementation androidx.appcompat
-
-            // changed -> 26.1.0
-            implementation androidx.multidex
+    //RxJava
+    implementation rx.rxandroid
+    implementation rx.rxjava
+    implementation rx.rx2AndroidSchedulers
+    implementation rx.saveState
+    implementation rx.rxbindingSupport
+    implementation rx.rxbindingAppcompat
+    implementation rx.rxbindingAppcompatKotlin
+    implementation rx.rxbinding
+    implementation rx.rxRelay
 
 
-            // architecture components
-            implementation arch.lifecycleExtensions
+    // Google Support Libraries
+    implementation mateiral.material
 
-            // dependency injection
-            implementation dagger.dagger
-            implementation dagger.daggerAndroid
-            implementation dagger.daggerAndroidSupport
-            kapt dagger.daggerCompiler
-            kapt dagger.daggerAndroidProcessor
+    implementation androidx.recyclerview
+    implementation androidx.cardView
+    implementation androidx.constraintlayout
+    implementation androidx.coreKtx
 
-            // Navigation
-            implementation navigation.fragment
-            implementation navigation.ui
-            implementation navigation.fragmentKtx
-            implementation navigation.uiKtx
+    //noinspection GradleCompatible
+    implementation androidx.legacySupport
+    implementation androidx.appcompat
 
-            // permissions
-            implementation permissionDexter.dexter
+    // changed -> 26.1.0
+    implementation androidx.multidex
 
-            // chuck
-            debugImplementation chuck.chuck
-            releaseImplementation chuck.chuckNoOp
 
-            // Picasso
-            implementation picasso.picasso
+    // architecture components
+    implementation arch.lifecycleExtensions
 
-            // apache utils
-            implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    // dependency injection
+    implementation dagger.dagger
+    implementation dagger.daggerAndroid
+    implementation dagger.daggerAndroidSupport
+    kapt dagger.daggerCompiler
+    kapt dagger.daggerAndroidProcessor
+
+    // Navigation
+    implementation navigation.fragment
+    implementation navigation.ui
+    implementation navigation.fragmentKtx
+    implementation navigation.uiKtx
+    api navigation.dynamic_feature
+
+    // permissions
+    implementation permissionDexter.dexter
+
+    // chuck
+    debugImplementation chuck.chuck
+    releaseImplementation chuck.chuckNoOp
+
+    // Picasso
+    implementation picasso.picasso
+
+    // apache utils
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
 
 }
-
-
 
 
 //dependencies {

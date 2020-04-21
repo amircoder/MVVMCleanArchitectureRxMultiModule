@@ -1,6 +1,6 @@
 package com.aba.core.data.remote
 
-import com.SOME_TEXT
+import com.aba.core.SOME_TEXT
 import com.aba.core.data.SearchDataHelper
 import com.aba.core.data.model.TVSearchResponse
 import com.aba.core.data.net.service.TVMazeService

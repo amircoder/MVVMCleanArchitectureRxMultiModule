@@ -2,7 +2,7 @@ package com.aba.core.data.local.dao
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
-import com.*
+import com.aba.core.*
 import com.aba.core.data.local.AppDataBase
 import com.aba.core.data.model.TVSearchResponse
 import org.assertj.core.api.AssertionsForClassTypes.assertThat
@@ -68,7 +68,9 @@ class SearchDaoTest {
             assertThat(this.show.officialSite).isEqualTo(SOME_URL)
             assertThat(this.show.image.medium).isEqualTo(SOME_URL)
             assertThat(this.show.image.original).isEqualTo(SOME_URL)
-            assertThat(this.show.links?.previousepisode?.PreviousEpisodeHref).isEqualTo(SOME_URL)
+            assertThat(this.show.links?.previousepisode?.PreviousEpisodeHref).isEqualTo(
+                SOME_URL
+            )
             assertThat(this.show.links?.self?.selfHref).isEqualTo(SOME_URL)
         }
     }

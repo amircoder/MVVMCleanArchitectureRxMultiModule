@@ -1,7 +1,7 @@
 package com.aba.core.data.mapper
 
-import com.SOME_SEARCH_RESPONSE_ITEMS
-import com.SOME_SEARCH_MODELS
+import com.aba.core.SOME_SEARCH_RESPONSE_ITEMS
+import com.aba.core.SOME_SEARCH_MODELS
 import com.aba.core.domain.data.SearchModel
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test

@@ -1,10 +1,12 @@
 package com.aba.core
 
-import com.aba.core.base.BaseActivity
+import com.aba.core.view.FullScreenActivity
 
-class MainActivity: BaseActivity() {
+class MainActivity: FullScreenActivity() {
+
     override val contentResourceId: Int
         get() = R.layout.activity_main
+
     // features needed to be added
     // MVVM clean-architecture RX Flavors multi-binding motion-layout
 

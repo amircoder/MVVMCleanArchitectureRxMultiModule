@@ -1,14 +1,14 @@
 package com.aba.core.data.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.*
+import com.aba.core.*
 import com.aba.core.data.local.datasource.SearchLocalDataSource
 import com.aba.core.data.mapper.SearchMapper
 import com.aba.core.data.remote.SearchRemoteDataSource
 import com.aba.core.domain.data.SearchModel
 import com.aba.core.network.ResultResponse
-import com.aba.core.rx.SuccessResultWrapper
 import com.nhaarman.mockitokotlin2.*
+import com.nhaarman.mockitokotlin2.any
 import io.reactivex.Observable
 import io.reactivex.observers.TestObserver
 import org.junit.Before
@@ -209,7 +209,9 @@ class SearchRepositoryImplTest {
      */
 
     private fun prepareMapper() {
-        given(mockSearchMapper.map(SOME_SEARCH_RESPONSE_ITEMS)).willReturn(SOME_SEARCH_MODELS)
+        given(mockSearchMapper.map(SOME_SEARCH_RESPONSE_ITEMS)).willReturn(
+            SOME_SEARCH_MODELS
+        )
         given(mockSearchMapper.map(SOME_OTHER_SEARCH_RESPONSE_ITEMS)).willReturn(
             SOME_OTHER_SEARCH_MODELS
         )

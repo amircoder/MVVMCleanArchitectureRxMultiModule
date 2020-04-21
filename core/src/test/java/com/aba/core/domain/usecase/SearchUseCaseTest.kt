@@ -1,7 +1,7 @@
 package com.aba.core.domain.usecase
 
-import com.SOME_SEARCH_MODELS
-import com.SOME_TEXT
+import com.aba.core.SOME_SEARCH_MODELS
+import com.aba.core.SOME_TEXT
 import com.aba.core.domain.data.SearchModel
 import com.aba.core.domain.repository.SearchRepository
 import com.aba.core.domain.usecase.SearchUseCase.SearchParams
@@ -14,6 +14,7 @@ import com.aba.core.rx.TrampolineSchedulerProvider
 import com.nhaarman.mockitokotlin2.*
 import io.reactivex.Observable
 import io.reactivex.observers.TestObserver
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -25,6 +26,7 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class SearchUseCaseTest {
 
+    private lateinit var param: SearchParams
     private lateinit var result: TestObserver<ResultResponse<List<SearchModel>>>
     private val searchParam = SearchParams(SOME_TEXT)
     private val stubException = Exception()
@@ -65,6 +67,11 @@ class SearchUseCaseTest {
         thenRepositoryIsCalled()
     }
 
+    @Test
+    fun `whenOnWith givenQueryString thenParamIsCreated`(){
+        whenOnWith()
+        thenParamIsCreated()
+    }
 
 
     /*
@@ -86,6 +93,7 @@ class SearchUseCaseTest {
         given(errorContainer.getError(any())).willReturn(ErrorEntity.Network)
     }
 
+
     /*
      * When
      */
@@ -93,6 +101,9 @@ class SearchUseCaseTest {
         result = subject.execute(searchParam).test()
     }
 
+    private fun whenOnWith() {
+        param = subject.with(SOME_TEXT)
+    }
     /*
      * Then
      */
@@ -111,6 +122,9 @@ class SearchUseCaseTest {
             .assertValue(ResultResponse.Failure(ErrorEntity.Network))
     }
 
+    private fun thenParamIsCreated() {
+        assertThat(param).isEqualTo(SearchParams(SOME_TEXT))
+    }
 
     /*
      * Helper

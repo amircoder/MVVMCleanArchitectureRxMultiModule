@@ -203,3 +203,15 @@ k
 ;core/src/main/java/com/aba/core/data/mapper/SearchMapper.kt,5/9/595ba130218d2f161c0f80fb85c7fe43dde73794
 j
 :core/src/main/java/com/aba/core/rx/SuccessResultWrapper.kt,8/9/894732e2f008c5e7a3b9065bb7bb69f4321aa7c2
+^
+.core/src/main/java/com/aba/core/di/RxModule.kt,2/2/22c6d01a2bfc502bd1ce7617411af87d0126710e
+o
+?core/src/main/java/com/aba/core/domain/usecase/SearchUseCase.kt,6/1/619a5c8ccdfb912b9ecc563a7e03050cf8dc41dc
+s
+Ccore/src/test/java/com/aba/core/domain/usecase/SearchUseCaseTest.kt,1/1/113caf725076e634bd0f077990bc73742a959dc7
+K
+search_feature/build.gradle,2/e/2ec3d1a91e4c1c1aa11eb3b7c37000e57bcdd10e
+u
+Esearch_feature/src/main/java/com/aba/core/di/SearchFragmentBinding.kt,f/6/f6a3a3c2da31502a7ed222ae2922441a8f73e49a
+t
+Dsearch_feature/src/main/java/com/aba/core/di/SearchFragmentModule.kt,c/1/c13bbff083702fe8435345e73f33af9f5ede5dde

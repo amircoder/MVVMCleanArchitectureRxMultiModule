@@ -16,17 +16,17 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         AndroidModule::class,
         ViewModelFactoryModule::class,
-        NetworkModule::class
-//        DataModule::class,
-//        UseCaseModule::class,
+        NetworkModule::class,
+        LocalDataModule::class,
+        UseCaseModule::class
 //        ServiceModule::class,
 //        PersistenceModule::class,
 //        RxModule::class,
-//        SearchActivityBinding::class,
+//        SearchFragmentBinding::class
 //        DetailFragmentBinding::class
     ]
 )
-interface AppComponent: AndroidInjector<DaggerApplication> {
+interface AppComponent : AndroidInjector<DaggerApplication> {
     @Component.Builder
     interface Builder {
         @BindsInstance

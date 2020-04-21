@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".base.MainApp">
+
         <activity android:name=".MainActivity">
 
         </activity>
+
     </application>
 </manifest>

@@ -1,13 +1,9 @@
 apply from: '../common_app.gradle'
 //apply from: rootProject.file("app/config.gradle")
 
-android {
-
-
-
-}
 
 dependencies {
-    // TODO: replace lib_theme with lib_theme_global after fixing test bugs
-//    api project(":lib_theme")
+
+    api project(":search_feature")
 }
+

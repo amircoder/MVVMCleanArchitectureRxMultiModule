@@ -19,36 +19,34 @@ android {
         }
     }
 
-    productFlavors {
-        eu {
-            applicationIdSuffix ".eu"
-            versionNameSuffix "-eu"
-        }
-
-        usa {
-            applicationIdSuffix ".usa"
-            versionNameSuffix "-usa"
-        }
-
-        development {
-            applicationIdSuffix ".dev"
-            versionNameSuffix "-dev"
-        }
-        play {
-            applicationIdSuffix ".release"
-            versionNameSuffix "-release"
-        }
-
-    }
+//    productFlavors {
+//        eu {
+//            applicationIdSuffix ".eu"
+//            versionNameSuffix "-eu"
+//        }
+//
+//        usa {
+//            applicationIdSuffix ".usa"
+//            versionNameSuffix "-usa"
+//        }
+//
+//        development {
+//            applicationIdSuffix ".dev"
+//            versionNameSuffix "-dev"
+//        }
+//        play {
+//            applicationIdSuffix ".release"
+//            versionNameSuffix "-release"
+//        }
+//
+//    }
 
 }
 
 
 dependencies {
-    // different flavors of core library for different flavors of app.
-    // Note: Deprecated as of gradle version 3 above, now we could use just usual library implementation/api.
     api project(":core")
-
+    implementation project(":search_feature")
 }
 
 

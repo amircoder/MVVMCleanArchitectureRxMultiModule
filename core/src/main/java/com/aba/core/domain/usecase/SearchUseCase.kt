@@ -13,15 +13,19 @@ import javax.inject.Inject
 
 class SearchUseCase @Inject constructor(
     private val searchRepository: SearchRepository,
-    private val schedulerProvider: SchedulerProvider,
-    private val errorContainer: ErrorContainer
+    schedulerProvider: SchedulerProvider,
+    errorContainer: ErrorContainer
 ) : ObservableUseCase<SearchParams, List<SearchModel>>(
     schedulerProvider, errorContainer
 ) {
 
+
     override fun buildObservable(params: SearchParams): Observable<ResultResponse<List<SearchModel>>> =
         searchRepository.search(params.query)
 
+    fun with(query: String) = SearchParams(query)
+
     data class SearchParams(val query: String) : BaseUseCase.Params
+
 
 }
