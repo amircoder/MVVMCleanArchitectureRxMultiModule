@@ -1,6 +1,5 @@
 package com.aba.core.rx
 
-import com.aba.core.rx.SchedulerProvider
 import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
 

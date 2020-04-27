@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".base.MainApp">
+        android:name="com.aba.core.base.MainApp">
 
-        <activity android:name=".MainNavigationActivity">
+        <activity android:name="com.aba.core.MainNavigationActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
             <action android:name="android.intent.action.VIEW"/>

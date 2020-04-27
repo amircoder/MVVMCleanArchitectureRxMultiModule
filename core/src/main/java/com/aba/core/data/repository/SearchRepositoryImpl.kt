@@ -6,7 +6,6 @@ import com.aba.core.data.remote.SearchRemoteDataSource
 import com.aba.core.domain.data.SearchModel
 import com.aba.core.domain.repository.SearchRepository
 import com.aba.core.network.ResultResponse
-import com.aba.core.rx.SuccessResultWrapper
 import io.reactivex.Observable
 import javax.inject.Inject
 
