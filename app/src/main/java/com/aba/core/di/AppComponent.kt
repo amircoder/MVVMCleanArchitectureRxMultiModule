@@ -18,10 +18,10 @@ import javax.inject.Singleton
         ViewModelFactoryModule::class,
         NetworkModule::class,
         LocalDataModule::class,
-        UseCaseModule::class
-//        ServiceModule::class,
-//        PersistenceModule::class,
-//        RxModule::class,
+        UseCaseModule::class,
+        ServiceModule::class,
+        RxModule::class,
+        MainActivityBinding::class
 //        SearchFragmentBinding::class
 //        DetailFragmentBinding::class
     ]

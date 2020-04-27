@@ -28,11 +28,11 @@ abstract class BaseActivity: DaggerAppCompatActivity(), HasSupportFragmentInject
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
-        applyTheme()
+        applyAppTheme()
         setContentView(contentResourceId)
     }
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentInjector
 
-    protected fun applyTheme() = setTheme(themeProvider.theme)
+    private fun applyAppTheme() = setTheme(themeProvider.theme)
 }

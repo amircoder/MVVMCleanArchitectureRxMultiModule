@@ -11,7 +11,12 @@
         android:theme="@style/AppTheme"
         android:name=".base.MainApp">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainNavigationActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
 
         </activity>
 

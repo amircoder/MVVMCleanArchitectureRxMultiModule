@@ -5,11 +5,11 @@ dependencies {
     api project(":core-test")
 
     // okhttp
-    implementation okhttp_interceptor.interceptor
+    api okhttp_interceptor.interceptor
 
     // retrofit
-    implementation retrofitRx.retrofitConverterGson
-    implementation retrofitRx.retrofitRxjavaAdapter
+    api retrofitRx.retrofitConverterGson
+    api retrofitRx.retrofitRxjavaAdapter
 }
 
 

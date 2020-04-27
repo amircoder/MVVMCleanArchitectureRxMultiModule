@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.annotation.NonNull
 import com.aba.core.BuildConfig
 import com.aba.core.DataConstants
+import com.aba.core.data.net.service.TVMazeService
 import com.aba.core.di.scope.PerApplication
 import com.aba.core.network.error.ErrorContainer
 import com.aba.core.network.error.GeneralHandlerImpl

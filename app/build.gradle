@@ -4,6 +4,5 @@ apply from: '../common_app.gradle'
 
 dependencies {
 
-    api project(":search_feature")
 }
 

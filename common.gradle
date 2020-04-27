@@ -17,13 +17,21 @@ def appFile = rootProject.file("appProperties.properties")
 def appProperties = new Properties()
 appProperties.load(new FileInputStream(appFile))
 
+
+// Generates Version Code based on date & Time
+static def getVersionCode(offset = 0) {
+    def formattedDate = new Date().format('yyMMddHH')
+    return formattedDate.toInteger() + offset
+}
+
 android {
     compileSdkVersion app.compileSdkVersion
     buildToolsVersion app.buildToolsVersion
     defaultConfig {
         minSdkVersion app.minSdkVersion
         targetSdkVersion app.targetSdkVersion
-        versionCode app.applicationVersionCode
+//        versionCode app.applicationVersionCode
+        versionCode getVersionCode()
         versionName app.applicationVersionName
         testApplicationId app.applicationId
         resValue "string", "app_name", "TV Series Finder"
@@ -118,6 +126,7 @@ android {
             debuggable true
         }
     }
+
 
     // Avoids multiple APKs on debug mode and some other settings to speed up build
 //    if (project.hasProperty("devDebug") || project.hasProperty("demoDebug") || project.hasProperty("playDebug")) {
