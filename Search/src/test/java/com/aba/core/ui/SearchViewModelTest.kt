@@ -1,14 +1,16 @@
 package com.aba.core.ui
 
-import com.aba.core.SOME_SEARCH_MODELS
-import com.aba.core.SOME_TEXT
-import com.aba.core.any
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.aba.core.*
+import com.aba.core.domain.data.SearchModel
 import com.aba.core.domain.usecase.SearchUseCase
 import com.aba.core.network.ResultResponse
-import com.aba.core.observeOnce
 import com.nhaarman.mockitokotlin2.given
+import com.nhaarman.mockitokotlin2.verify
 import io.reactivex.Observable
+import io.reactivex.observers.TestObserver
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.InjectMocks
@@ -25,13 +27,28 @@ class SearchViewModelTest {
     private lateinit var subject: SearchViewModel
 
 
+    @get:Rule
+    val rule = InstantTaskExecutorRule()
+
+    @get:Rule
+    var timeoutRule: RxImmediateSchedulerRule = RxImmediateSchedulerRule()
+
+
     @Test
     fun `givenSuccessfulResult whenOnSearch thenResultIsAvailable`(){
         givenSuccessfulResult()
         whenOnSearch()
         thenResultIsAvailable()
+        thenUseCaseExecuteCalled()
     }
 
+    @Test
+    fun `givenFailureResult whenOnSearch thenResultIsFailure`(){
+        givenFailureResult()
+        whenOnSearch()
+        thenResultIsFailure()
+        thenUseCaseExecuteCalled()
+    }
 
 
 
@@ -40,8 +57,13 @@ class SearchViewModelTest {
      */
     private fun givenSuccessfulResult() {
         given(mockUseCase.execute(any())).willReturn(Observable.just(ResultResponse.Success(
-            SOME_SEARCH_MODELS)))
+            SOME_SEARCH_MODELS) as ResultResponse<List<SearchModel>>))
     }
+
+    private fun givenFailureResult() {
+        given(mockUseCase.execute(any())).willReturn(Observable.just(ResultResponse.Failure(SOME_ERROR_ENTITY)))
+    }
+
 
     /*
      * When
@@ -49,6 +71,7 @@ class SearchViewModelTest {
     private fun whenOnSearch() {
         subject.search(SOME_TEXT)
     }
+
 
     /*
      * Then
@@ -60,4 +83,18 @@ class SearchViewModelTest {
             }
         }
     }
+
+    private fun thenUseCaseExecuteCalled() {
+        verify(mockUseCase).execute(any())
+    }
+
+    private fun thenResultIsFailure() {
+        subject.searchLiveData.observeOnce {result ->
+            with((result as ResultResponse.Failure).error){
+                assertThat(this).isEqualTo(SOME_ERROR_ENTITY)
+            }
+        }
+    }
+
 }
+

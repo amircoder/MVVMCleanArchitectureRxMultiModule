@@ -2,6 +2,7 @@ package com.aba.core
 
 import com.aba.core.data.model.TVSearchResponse
 import com.aba.core.domain.data.SearchModel
+import com.aba.core.network.error.ErrorEntity
 import java.util.*
 
 const val SOME_TEXT = "night"
@@ -118,9 +119,11 @@ val SOME_COMBINED_SEARCH_RESPONSE_ITEMS: List<TVSearchResponse> = listOf(
 )
 
 @JvmField
-val SOME_SEARCH_MODELS = Collections.singletonList(SOME_SEARCH_MODEL)
-val SOME_OTHER_SEARCH_MODELS = Collections.singletonList(SOME_OTHER_SEARCH_MODEL)
+val SOME_SEARCH_MODELS: MutableList<SearchModel> = Collections.singletonList(SOME_SEARCH_MODEL)
+val SOME_OTHER_SEARCH_MODELS: MutableList<SearchModel> = Collections.singletonList(SOME_OTHER_SEARCH_MODEL)
 val SOME_COMBINED_SEARCH_MODELS = listOf(
     SOME_SEARCH_MODEL,
     SOME_OTHER_SEARCH_MODEL
 )
+
+val SOME_ERROR_ENTITY = ErrorEntity.Network

@@ -10,6 +10,7 @@ import com.aba.core.callback.ErrorSuccessCallback
 import com.aba.core.extension.hide
 import com.aba.core.extension.show
 import kotlinx.android.synthetic.main.fragment_error_success.*
+import kotlinx.android.synthetic.main.fragment_error_success.view.*
 
 abstract class ErrorSuccessFragment : BaseFragment(), ErrorSuccessCallback {
 

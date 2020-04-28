@@ -30,7 +30,6 @@ android {
     defaultConfig {
         minSdkVersion app.minSdkVersion
         targetSdkVersion app.targetSdkVersion
-//        versionCode app.applicationVersionCode
         versionCode getVersionCode()
         versionName app.applicationVersionName
         testApplicationId app.applicationId

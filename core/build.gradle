@@ -2,9 +2,8 @@ apply from: '../common_lib.gradle'
 
 dependencies {
     api project(":lib-theme")
-    api project(":core-test")
 
-    // okhttp
+    // OKHttp
     api okhttp_interceptor.interceptor
 
     // retrofit
