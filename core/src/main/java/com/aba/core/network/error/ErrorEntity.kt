@@ -9,5 +9,5 @@ sealed class ErrorEntity {
 
     object ServiceUnavailable : ErrorEntity()
 
-    object Unknown : ErrorEntity()
+    data class Unknown(val message: String = "") : ErrorEntity()
 }

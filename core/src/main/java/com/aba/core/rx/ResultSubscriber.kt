@@ -2,6 +2,8 @@ package com.aba.core.rx
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.aba.core.network.ResultResponse
+import com.aba.core.network.error.ErrorEntity
 import io.reactivex.Observable
 import io.reactivex.observers.DisposableObserver
 

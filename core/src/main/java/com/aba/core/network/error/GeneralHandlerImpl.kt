@@ -20,10 +20,10 @@ class GeneralHandlerImpl @Inject constructor() : ErrorContainer {
 
                     HttpURLConnection.HTTP_UNAVAILABLE -> ErrorEntity.ServiceUnavailable
 
-                    else -> ErrorEntity.Unknown
+                    else -> ErrorEntity.Unknown()
                 }
             }
-            else -> ErrorEntity.Unknown
+            else -> ErrorEntity.Unknown()
         }
     }
 }

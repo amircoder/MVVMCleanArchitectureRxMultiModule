@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class SearchViewModel @Inject constructor(
     private val searchUseCase: SearchUseCase
-): BaseViewModel() {
+) : BaseViewModel() {
 
     val searchLiveData: LiveData<ResultResponse<List<SearchModel>>>
         get() = _searchLiveData
@@ -20,8 +20,9 @@ class SearchViewModel @Inject constructor(
 
     fun search(query: String) {
         this += searchUseCase.execute(searchUseCase.with(query))
-            .subscribeWith(ResultSubscriber(_searchLiveData){
-                it.postValue(ResultResponse.Loading())
+            .subscribeWith(ResultSubscriber(_searchLiveData) { liveData ->
+                // starting result
+                liveData.postValue(ResultResponse.Loading())
             })
     }
 
