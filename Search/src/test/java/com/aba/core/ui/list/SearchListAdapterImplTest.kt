@@ -1,46 +1,59 @@
 package com.aba.core.ui.list
 
 import android.widget.FrameLayout
+import com.aba.core.SOME_SEARCH_MODEL
 import com.aba.core.SOME_SEARCH_MODELS
+import com.aba.core.argumentCaptor
 import com.aba.core.base.RobolectricTestBase
+import com.aba.core.domain.data.SearchModel
+import com.aba.core.extension.capture
+import com.nhaarman.mockitokotlin2.then
+import com.nhaarman.mockitokotlin2.verify
 import junit.framework.Assert.assertNotNull
 import org.assertj.android.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
+import org.mockito.ArgumentCaptor
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations.initMocks
 import org.robolectric.RuntimeEnvironment
 
-class SearchListAdapterImplTest: RobolectricTestBase() {
-
+class SearchListAdapterImplTest : RobolectricTestBase() {
 
 
     @Mock
     lateinit var mockCallback: SearchListAdapter.SearchAdapterCallback
+
     @Mock
     lateinit var mockViewHolder: SearchItemViewHolder
     private lateinit var subject: SearchListAdapterImpl
     private lateinit var viewHolder: SearchItemViewHolder
 
     @Before
-    fun setup(){
+    fun setup() {
         initMocks(this)
         subject = SearchListAdapterImpl(mockCallback)
     }
 
 
     @Test
-    fun `whenOnCreateViewHolder thenViewHolderIsCreated`(){
+    fun `whenOnCreateViewHolder thenViewHolderIsCreated`() {
         whenOnCreateViewHolder()
         thenViewHolderIsCreated()
     }
 
     @Test
-    fun `givenSearchItems whenOnBindViewHolder thenViewHolderBindViewIsCalled`(){
+    fun `givenSearchItems whenOnBindViewHolder thenViewHolderBindViewIsCalled`() {
         givenSearchItems()
         whenOnBindViewHolder()
         thenViewHolderBindViewIsCalled()
+    }
+
+    @Test
+    fun `givenSearchItems thenItemSizeIsTrue`(){
+        givenSearchItems()
+        thenItemSizeIsTrue()
     }
 
 
@@ -72,7 +85,15 @@ class SearchListAdapterImplTest: RobolectricTestBase() {
     }
 
     private fun thenViewHolderBindViewIsCalled() {
+        with(argumentCaptor<SearchModel>()) {
+            then(mockViewHolder).should().bindView(capture(this))
+            assertThat(value).isEqualTo(SOME_SEARCH_MODEL)
+        }
 
+    }
+
+    private fun thenItemSizeIsTrue() {
+        assertThat((subject.itemCount)).isEqualTo(SOME_SEARCH_MODELS.size)
     }
 
 }

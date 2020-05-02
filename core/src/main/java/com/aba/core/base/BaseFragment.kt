@@ -13,4 +13,9 @@ abstract class BaseFragment: DaggerFragment() {
 
     protected abstract val contentResourceId: Int
 
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+
+    }
 }

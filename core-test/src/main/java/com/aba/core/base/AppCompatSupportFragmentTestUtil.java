@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.aba.core.R;
+
 import org.robolectric.Robolectric;
 
 import dagger.android.AndroidInjector;
@@ -36,7 +38,7 @@ public final class AppCompatSupportFragmentTestUtil {
 
     public static void startVisibleFragment(Fragment fragment) {
         buildSupportFragmentManager(FragmentUtilActivity.class)
-                .beginTransaction().add(1, fragment, null).commit();
+                .beginTransaction().add(0, fragment, null).commit();
     }
 
     public static void startVisibleFragment(Fragment fragment, Class<? extends FragmentActivity> fragmentActivityClass, int containerViewId) {
@@ -58,7 +60,7 @@ public final class AppCompatSupportFragmentTestUtil {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             LinearLayout view = new LinearLayout(this);
-            view.setId(1);
+            view.setId(0);
             setContentView(view);
         }
 

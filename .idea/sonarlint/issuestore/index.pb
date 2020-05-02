@@ -225,8 +225,6 @@ C
 Search/build.gradle,6/b/6bbbcc6b278606a8d8c174443bb169ce3930b6ca
 b
 2core/src/main/java/com/aba/core/di/ViewModelKey.kt,5/6/5694b30c09d9b8a627123aba64eeecb3bb4a50ed
-f
-6Search/src/main/java/com/aba/core/ui/SearchFragment.kt,b/f/bff0cdeccc9b9fa3c6e2995fee640f5a6bd51124
 k
 ;Search/src/test/java/com/aba/core/ui/SearchViewModelTest.kt,b/3/b316b4f1858dd0739d420da44816e9fb9536025d
 g
@@ -253,8 +251,6 @@ f
 6core/src/main/java/com/aba/core/view/GeneralDivider.kt,6/4/64ca19f3a5d9a2521e21b1805ee798d677b67a8c
 o
 ?core-test/src/main/java/com/aba/core/base/FragmentTestBase.java,4/9/49c58487559c1c6f851528aa5a0fca7e6e9137c8
-j
-:Search/src/test/java/com/aba/core/ui/SearchFragmentTest.kt,0/c/0c68e8e741230d5405b70f9e5aaf620b57ebe637
 n
 >Search/src/main/java/com/aba/core/ui/list/SearchListAdapter.kt,f/1/f145d3843b0d8f35d34291cde09ae405f50bcd37
 q
@@ -267,3 +263,17 @@ r
 BSearch/src/main/java/com/aba/core/ui/list/SearchListAdapterImpl.kt,9/7/97e9ea0499fc0bbd5890e0a71eeb4efcd50d9c34
 v
 FSearch/src/test/java/com/aba/core/ui/list/SearchListAdapterImplTest.kt,1/8/189de0be352121245c4ee34df01585b2b066356e
+w
+Gcore-test/src/main/java/com/aba/core/extension/MockitoToKotlinHelper.kt,b/5/b50150e212737f244b80eec8357f8abe719bacc9
+
+Ocore-test/src/main/java/com/aba/core/base/AppCompatSupportFragmentTestUtil.java,2/8/28c416b255b58b4fbaa6216870cd3d3a5482786b
+‰
+Ycore-test/src/main/java/com/aba/core/base/DependencyFileLockingRobolectricTestRunner.java,2/d/2d8a0ee3f2697c4ea672574dc2b96f7f960801f3
+p
+@core-test/src/main/java/com/aba/core/base/RobolectricTestBase.kt,3/d/3dd98c3c2f87c05b490be2e52e71983673f8be0b
+t
+Dcore-test/src/main/java/com/aba/core/base/ShadowSupportFragment.java,2/c/2c57e83f13995f23d766dba2c2413ab44356bc94
+n
+>Search/src/test/java/com/aba/core/ui/SearchListFragmentTest.kt,d/2/d23946f03efebd7f01bfa2fd28b2d6fe0210efe8
+j
+:Search/src/main/java/com/aba/core/ui/SearchListFragment.kt,b/b/bbd4df3034485f11e91eff7bd9efdebf2c61b428

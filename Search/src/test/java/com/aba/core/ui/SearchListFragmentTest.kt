@@ -8,36 +8,30 @@ import com.aba.core.network.ResultResponse
 import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.spy
-import org.assertj.core.api.Assertions.assertThat
 import org.assertj.android.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
-
 import org.junit.Test
 import org.mockito.MockitoAnnotations.initMocks
 
-class SearchFragmentTest : FragmentTestBase<SearchFragment>(){
+class SearchListFragmentTestWE: FragmentTestBase<SearchListFragment>() {
 
-    private var mockViewModel: SearchViewModel = mock()
-    private var mockViewModelFactory: ViewModelProvider.Factory = mock()
+    private val mockViewModelFactory: ViewModelProvider.Factory = mock()
+    private val mockViewModel: SearchViewModel = mock()
 
-    private val liveData = MutableLiveData<ResultResponse<List<SearchModel>>>()
-    private lateinit var viewModel: SearchViewModel
-    private lateinit var spyFragment: SearchFragment
-
+    private val searchLiveData = MutableLiveData<ResultResponse<List<SearchModel>>>()
+    private lateinit var spyFragment: SearchListFragment
+    private lateinit var spyViewModel: SearchViewModel
 
     @Before
-    fun setUp() {
+    fun setup(){
         initMocks(this)
         setupViewModel()
-        setupLiveData()
+        setupViewModelState()
         createFragment()
-        viewModel = spy(fragment.viewModel)
         spyFragment = spy(fragment)
+        spyViewModel = spy(fragment.viewModel)
     }
-
-    /*
-     * Test
-     */
 
     @Test
     fun `whenOnCreate thenViewIsCreated andThenViewModelIsCreated`(){
@@ -45,33 +39,29 @@ class SearchFragmentTest : FragmentTestBase<SearchFragment>(){
         thenViewModelIsCreated()
     }
 
-    private fun thenViewModelIsCreated() {
-        assertThat(mockViewModel).isNotNull
-    }
-
-
-    /*
-     * Given
-     */
-
 
     /*
      * Then
      */
-    private fun thenViewIsCreated() {
+    private fun thenViewModelIsCreated() {
         assertThat(fragment.view).isNotNull
         assertThat(fragment.view).isVisible
     }
+
+    private fun thenViewIsCreated() {
+        assertThat(fragment.viewModel).isNotNull
+    }
+
 
     /*
      * Helper
      */
     private fun setupViewModel() {
-        given(mockViewModelFactory.create(SearchViewModel::class.java))
-            .willReturn(mockViewModel)
+        given(mockViewModelFactory.create(SearchViewModel::class.java)).willReturn(mockViewModel)
     }
 
-    private fun setupLiveData() {
-        given(mockViewModel.searchLiveData).willReturn(liveData)
+    private fun setupViewModelState() {
+        given(mockViewModel.searchLiveData).willReturn(searchLiveData)
     }
+
 }

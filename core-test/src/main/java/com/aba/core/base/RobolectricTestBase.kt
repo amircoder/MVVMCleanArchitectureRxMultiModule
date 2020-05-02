@@ -25,18 +25,18 @@ abstract class RobolectricTestBase {
 
 
     protected fun getString(@StringRes resId: Int): String {
-        return RuntimeEnvironment.application.getString(resId)
+        return RuntimeEnvironment.systemContext.getString(resId)
     }
 
     protected fun getString(@StringRes resId: Int, vararg args: Any): String {
-        return RuntimeEnvironment.application.getString(resId, *args)
+        return RuntimeEnvironment.systemContext.getString(resId, *args)
     }
 
     protected fun getQuantityString(
         @PluralsRes resId: Int, quantity: Int,
         vararg args: Any
     ): String {
-        return RuntimeEnvironment.application.resources.getQuantityString(resId, quantity, *args)
+        return RuntimeEnvironment.systemContext.resources.getQuantityString(resId, quantity, *args)
     }
 
 

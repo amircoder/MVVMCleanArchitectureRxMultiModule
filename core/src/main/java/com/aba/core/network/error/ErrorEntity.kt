@@ -1,7 +1,11 @@
 package com.aba.core.network.error
 
 sealed class ErrorEntity {
-    object Network : ErrorEntity()
+    object Network : ErrorEntity(){
+        override fun toString(): String {
+            return this.javaClass.canonicalName
+        }
+    }
 
     object NotFound : ErrorEntity()
 

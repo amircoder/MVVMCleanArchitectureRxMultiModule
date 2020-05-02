@@ -54,6 +54,7 @@ ext.assertjAndroid = [
 ]
 
 def robolectricVersion = "4.3"
+//def robolectricVersion = "3.7.1"
 ext.robolectricVersion = [
         "robolectric": "org.robolectric:robolectric:$robolectricVersion"
 ]

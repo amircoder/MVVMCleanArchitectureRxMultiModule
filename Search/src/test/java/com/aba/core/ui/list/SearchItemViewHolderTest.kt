@@ -1,8 +1,10 @@
 package com.aba.core.ui.list
 
 import com.aba.core.SOME_SEARCH_MODEL
+import com.aba.core.any
 import com.aba.core.base.ViewHolderTestBase
 import com.aba.search.R
+import com.nhaarman.mockitokotlin2.then
 import junit.framework.Assert.assertTrue
 import kotlinx.android.synthetic.main.item_seach.view.*
 import org.assertj.core.api.Assertions.assertThat
@@ -32,6 +34,13 @@ class SearchItemViewHolderTest : ViewHolderTestBase<SearchItemViewHolder>() {
         thenBindText()
     }
 
+    @Test
+    fun `whenOnBindView whenOnItemViewClicked thenCallbackIsCalled`(){
+        whenOnBindView()
+        whenOnItemViewClicked()
+        thenCallbackIsCalled()
+    }
+
 
     /*
      * When
@@ -40,6 +49,9 @@ class SearchItemViewHolderTest : ViewHolderTestBase<SearchItemViewHolder>() {
         subject.bindView(SOME_SEARCH_MODEL)
     }
 
+    private fun whenOnItemViewClicked() {
+        subject.itemView.performClick()
+    }
 
     /*
      * Then
@@ -53,5 +65,10 @@ class SearchItemViewHolderTest : ViewHolderTestBase<SearchItemViewHolder>() {
             assertThat(searchTitle.text).isEqualTo(SOME_SEARCH_MODEL.name)
         }
     }
+
+    private fun thenCallbackIsCalled() {
+        then(mockCallback).should().onSearchItem(any())
+    }
+
 
 }
