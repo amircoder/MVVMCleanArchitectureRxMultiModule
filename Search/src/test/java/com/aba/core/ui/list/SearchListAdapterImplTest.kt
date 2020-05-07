@@ -5,16 +5,13 @@ import com.aba.core.SOME_SEARCH_MODEL
 import com.aba.core.SOME_SEARCH_MODELS
 import com.aba.core.argumentCaptor
 import com.aba.core.base.RobolectricTestBase
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import com.aba.core.extension.capture
 import com.nhaarman.mockitokotlin2.then
-import com.nhaarman.mockitokotlin2.verify
 import junit.framework.Assert.assertNotNull
-import org.assertj.android.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
-import org.mockito.ArgumentCaptor
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations.initMocks
 import org.robolectric.RuntimeEnvironment

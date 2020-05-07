@@ -2,7 +2,7 @@ package com.aba.core.domain.usecase
 
 import com.aba.core.SOME_SEARCH_MODELS
 import com.aba.core.SOME_TEXT
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import com.aba.core.domain.repository.SearchRepository
 import com.aba.core.domain.usecase.SearchUseCase.SearchParams
 import com.aba.core.network.ResultResponse

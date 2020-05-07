@@ -1,5 +1,6 @@
 package com.aba.core.base
 
+import android.util.Log
 import com.aba.core.base.BaseUseCase.Params
 import com.aba.core.network.ResultResponse
 import com.aba.core.network.error.ErrorContainer
@@ -13,6 +14,7 @@ abstract class ObservableUseCase<PARAMS : Params, result>
 ) :
     BaseUseCase<PARAMS, ResultResponse<result>> {
 
+
     protected abstract fun buildObservable(params: PARAMS): Observable<ResultResponse<result>>
 
     override fun execute(params: PARAMS): Observable<ResultResponse<result>> =
@@ -21,6 +23,11 @@ abstract class ObservableUseCase<PARAMS : Params, result>
             .concatMapDelayError { buildObservable(params) }
             .subscribeOn(scheduler.ioScheduler)
             .observeOn(scheduler.mainScheduler)
+            .doOnError {
+                for (elem in it.stackTrace){
+                    Log.e("error", elem.toString())
+                }
+            }
             .onErrorReturn { ResultResponse.Failure(errorContainer.getError(it)) }
 
 }

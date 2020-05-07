@@ -5,7 +5,7 @@ import com.aba.core.*
 import com.aba.core.data.local.datasource.SearchLocalDataSource
 import com.aba.core.data.mapper.SearchMapper
 import com.aba.core.data.remote.SearchRemoteDataSource
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import com.aba.core.network.ResultResponse
 import com.nhaarman.mockitokotlin2.*
 import com.nhaarman.mockitokotlin2.any
@@ -29,25 +29,18 @@ class SearchRepositoryImplTest {
 
     @Mock
     private lateinit var mockRemoteDataSource: SearchRemoteDataSource
-
     @Mock
     private lateinit var mockLocalDataSource: SearchLocalDataSource
-
-    @Mock
-    private lateinit var mockSearchMapper: SearchMapper
-
     @InjectMocks
     private lateinit var subject: SearchRepositoryImpl
 
     @Rule
     lateinit var rule: InstantTaskExecutorRule
-
     @Rule
     lateinit var mockitoRule: MockitoRule
 
     @Before
     fun setup() {
-        prepareMapper()
     }
 
 
@@ -111,13 +104,13 @@ class SearchRepositoryImplTest {
      */
     private fun givenLocalResponseSuccessful() {
         given(mockLocalDataSource.search(SOME_TEXT)).willReturn(
-            Observable.just(SOME_SEARCH_RESPONSE_ITEMS)
+            Observable.just(SOME_SEARCH_MODELS)
         )
     }
 
     private fun givenRemoteResponseSuccessful() {
         given(mockRemoteDataSource.search(SOME_TEXT)).willReturn(
-            Observable.just(SOME_OTHER_SEARCH_RESPONSE_ITEMS)
+            Observable.just(SOME_OTHER_SEARCH_MODELS)
         )
     }
 
@@ -208,13 +201,6 @@ class SearchRepositoryImplTest {
      * Helper
      */
 
-    private fun prepareMapper() {
-        given(mockSearchMapper.map(SOME_SEARCH_RESPONSE_ITEMS)).willReturn(
-            SOME_SEARCH_MODELS
-        )
-        given(mockSearchMapper.map(SOME_OTHER_SEARCH_RESPONSE_ITEMS)).willReturn(
-            SOME_OTHER_SEARCH_MODELS
-        )
-    }
+
 
 }

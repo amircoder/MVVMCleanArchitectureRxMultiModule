@@ -3,7 +3,7 @@ package com.aba.core.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import com.aba.core.base.FragmentTestBase
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import com.aba.core.network.ResultResponse
 import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.mock

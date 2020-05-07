@@ -1,7 +1,7 @@
 package com.aba.core.data.mapper
 
 import com.aba.core.data.model.TVSearchResponse
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import javax.inject.Inject
 
 class SearchMapper @Inject constructor() {
@@ -13,15 +13,15 @@ class SearchMapper @Inject constructor() {
                     add(
                         SearchModel(
                             id = id,
-                            originalImage = image.original,
-                            mediumImage = image.medium,
+                            originalImage = image?.original ?: "",
+                            mediumImage = image?.medium ?: "",
                             averageRating = rating?.average ?: 0.0,
                             score = item.score,
                             genres = genres ?: listOf(),
                             url = url,
                             language = language,
                             name = name,
-                            officialSite = officialSite,
+                            officialSite = officialSite ?: "",
                             status = status,
                             type = type
                         )
@@ -29,5 +29,6 @@ class SearchMapper @Inject constructor() {
                 }
             }
         }
+
 
 }

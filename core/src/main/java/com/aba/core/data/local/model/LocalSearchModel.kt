@@ -1,7 +1,10 @@
-package com.aba.core.domain.data
+package com.aba.core.data.local.model
 
+import androidx.room.Entity
+import com.aba.core.BuildConfig
 
-data class SearchModel(
+@Entity(tableName = BuildConfig.SEARCH_TABLE_NAME, primaryKeys = ["id"] )
+data class LocalSearchModel(
     val id: Int,
     val score: Double,
     val genres: List<String>,

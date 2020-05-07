@@ -5,7 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.aba.core.BuildConfig
-import com.aba.core.data.model.TVSearchResponse
+import com.aba.core.data.local.model.LocalSearchModel
 import io.reactivex.Observable
 
 
@@ -13,9 +13,9 @@ import io.reactivex.Observable
 interface SearchDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(searchItems: List<TVSearchResponse>)
+    fun insert(searchItems: List<LocalSearchModel>)
 
     @Query("SELECT * FROM ${BuildConfig.SEARCH_TABLE_NAME} WHERE name LIKE '%'||:tvTitle||'%'")
-    fun getTvItems(tvTitle: String): Observable<List<TVSearchResponse>>
+    fun getTvItems(tvTitle: String): Observable<List<LocalSearchModel>>
 
 }

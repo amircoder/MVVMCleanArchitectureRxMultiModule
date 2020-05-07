@@ -1,18 +1,23 @@
 package com.aba.core.data.local.datasource
 
 import com.aba.core.data.local.dao.SearchDao
-import com.aba.core.data.model.TVSearchResponse
+import com.aba.core.data.mapper.LocalSearchMapper
+import com.aba.core.domain.model.SearchModel
 import io.reactivex.Observable
 import javax.inject.Inject
 
 class SearchLocalDataSourceImpl @Inject constructor(
-    private val searchDao: SearchDao
+    private val searchDao: SearchDao,
+    private val mapper: LocalSearchMapper
 ): SearchLocalDataSource {
-    override fun search(query: String): Observable<List<TVSearchResponse>> {
+    override fun search(query: String): Observable<List<SearchModel>> {
         return searchDao.getTvItems(query)
+            .map {
+                mapper.mapFromLocal(it)
+            }
     }
 
-    override fun insert(items: List<TVSearchResponse>) {
-        searchDao.insert(items)
+    override fun insert(items: List<SearchModel>) {
+        searchDao.insert(mapper.mapToLocal(items))
     }
 }

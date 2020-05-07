@@ -23,7 +23,7 @@ class GeneralHandlerImpl @Inject constructor() : ErrorContainer {
                     else -> ErrorEntity.Unknown()
                 }
             }
-            else -> ErrorEntity.Unknown()
+            else -> ErrorEntity.Unknown(throwable.message.toString())
         }
     }
 }

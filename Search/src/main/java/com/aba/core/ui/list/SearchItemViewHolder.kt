@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import com.aba.search.R
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_seach.view.*

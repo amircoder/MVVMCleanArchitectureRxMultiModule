@@ -1,7 +1,6 @@
 package com.aba.core.ui.list
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import javax.inject.Inject
 
 class SearchListAdapterImpl @Inject constructor(private val callback: SearchListAdapter.SearchAdapterCallback) : SearchListAdapter<SearchItemViewHolder>() {

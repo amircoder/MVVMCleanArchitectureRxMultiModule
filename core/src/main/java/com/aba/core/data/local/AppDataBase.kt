@@ -8,10 +8,10 @@ import androidx.room.TypeConverters
 import com.aba.core.BuildConfig
 import com.aba.core.data.local.convertor.ListConverter
 import com.aba.core.data.local.dao.SearchDao
-import com.aba.core.data.model.TVSearchResponse
+import com.aba.core.data.local.model.LocalSearchModel
 
 @Database(
-    entities = [(TVSearchResponse::class)],
+    entities = [(LocalSearchModel::class)],
     version = 1,
     exportSchema = false
 )

@@ -4,6 +4,8 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
 import com.aba.core.*
 import com.aba.core.data.local.AppDataBase
+import com.aba.core.data.local.model.LocalSearchModel
+import com.aba.core.data.mapper.LocalSearchMapper
 import com.aba.core.data.model.TVSearchResponse
 import org.assertj.core.api.AssertionsForClassTypes.assertThat
 import org.junit.After
@@ -16,7 +18,7 @@ class SearchDaoTest {
 
     private lateinit var database: AppDataBase
     private lateinit var subject: SearchDao
-    private lateinit var result: List<TVSearchResponse>
+    private lateinit var result: List<LocalSearchModel>
 
     @Before
     fun setup() {
@@ -47,7 +49,7 @@ class SearchDaoTest {
      * When
      */
     private fun whenOnInsert() {
-        subject.insert(SOME_SEARCH_RESPONSE_ITEMS)
+        subject.insert(SOME_LOCAL_SEARCH_MODELS)
     }
 
     private fun whenGetSearchResults() {
@@ -59,19 +61,15 @@ class SearchDaoTest {
      */
     private fun thenResultIsSuccessful() {
         with(result[0]){
-            assertThat(this.show.name).isEqualTo(SOME_NAME)
-            assertThat(this.show.url).isEqualTo(SOME_URL)
-            assertThat(this.show.id).isEqualTo(SOME_ID)
-            assertThat(this.show.status).isEqualTo(SOME_STATUS)
-            assertThat(this.show.language).isEqualTo(SOME_LANGUAGE)
-            assertThat(this.show.type).isEqualTo(SOME_TYPE)
-            assertThat(this.show.officialSite).isEqualTo(SOME_URL)
-            assertThat(this.show.image.medium).isEqualTo(SOME_URL)
-            assertThat(this.show.image.original).isEqualTo(SOME_URL)
-            assertThat(this.show.links?.previousepisode?.PreviousEpisodeHref).isEqualTo(
-                SOME_URL
-            )
-            assertThat(this.show.links?.self?.selfHref).isEqualTo(SOME_URL)
+            assertThat(this.name).isEqualTo(SOME_NAME)
+            assertThat(this.url).isEqualTo(SOME_URL)
+            assertThat(this.id).isEqualTo(SOME_ID)
+            assertThat(this.status).isEqualTo(SOME_STATUS)
+            assertThat(this.language).isEqualTo(SOME_LANGUAGE)
+            assertThat(this.type).isEqualTo(SOME_TYPE)
+            assertThat(this.officialSite).isEqualTo(SOME_URL)
+            assertThat(this.mediumImage).isEqualTo(SOME_URL)
+            assertThat(this.originalImage).isEqualTo(SOME_URL)
         }
     }
 

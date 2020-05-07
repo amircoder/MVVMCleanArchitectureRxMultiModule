@@ -277,3 +277,13 @@ n
 >Search/src/test/java/com/aba/core/ui/SearchListFragmentTest.kt,d/2/d23946f03efebd7f01bfa2fd28b2d6fe0210efe8
 j
 :Search/src/main/java/com/aba/core/ui/SearchListFragment.kt,b/b/bbd4df3034485f11e91eff7bd9efdebf2c61b428
+d
+4core-test/src/main/java/com/aba/core/base/TestApp.kt,1/d/1ddd7c80d914ba5e7a1126fd7e05a08566a83bc3
+V
+&core-test/src/main/AndroidManifest.xml,8/d/8d183137ef822d543a6a9fdd20cefaf6746291cf
+i
+9core/src/main/java/com/aba/core/extension/AppExtension.kt,4/6/46662ea89ddf4756381c25eb9c1da8bf0faf9b69
+S
+#Search/src/main/AndroidManifest.xml,5/2/529ce551eecedbbb16206584c5c906a61a9e95bc
+d
+4core/src/main/java/com/aba/core/rx/ResultObserver.kt,7/a/7ae225be1f0e75da1005ab3a1929f3d64583d925

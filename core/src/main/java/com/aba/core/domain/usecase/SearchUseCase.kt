@@ -2,7 +2,7 @@ package com.aba.core.domain.usecase
 
 import com.aba.core.base.BaseUseCase
 import com.aba.core.base.ObservableUseCase
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import com.aba.core.domain.repository.SearchRepository
 import com.aba.core.domain.usecase.SearchUseCase.SearchParams
 import com.aba.core.network.ResultResponse
@@ -22,6 +22,7 @@ class SearchUseCase @Inject constructor(
 
     override fun buildObservable(params: SearchParams): Observable<ResultResponse<List<SearchModel>>> =
         searchRepository.search(params.query)
+
 
     fun with(query: String) = SearchParams(query)
 

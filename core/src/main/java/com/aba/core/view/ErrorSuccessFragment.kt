@@ -12,6 +12,7 @@ import com.aba.core.extension.show
 import kotlinx.android.synthetic.main.fragment_error_success.*
 import kotlinx.android.synthetic.main.fragment_error_success.view.*
 
+
 abstract class ErrorSuccessFragment : BaseFragment(), ErrorSuccessCallback {
 
     internal companion object {
@@ -23,11 +24,24 @@ abstract class ErrorSuccessFragment : BaseFragment(), ErrorSuccessCallback {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_error_success, container, false).apply {
+    ): View? = inflater.inflate(R.layout.fragment_error_success, container, false).run {
         errorContentContainer.addView(
             layoutInflater.inflate(contentResourceId, null)
         )
+        this
     }
+
+//    override fun onCreateView(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        val view = inflater.inflate(R.layout.fragment_error_success, container, false)
+//        view.errorContentContainer.addView(
+//            layoutInflater.inflate(contentResourceId, null)
+//        )
+//        return view
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -84,6 +98,5 @@ abstract class ErrorSuccessFragment : BaseFragment(), ErrorSuccessCallback {
                 displayedChild = viewIndex
             }
         }
-
     }
 }

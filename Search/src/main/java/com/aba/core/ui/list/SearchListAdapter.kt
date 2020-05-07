@@ -1,7 +1,8 @@
 package com.aba.core.ui.list
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 
 abstract class SearchListAdapter<VH: RecyclerView.ViewHolder>: RecyclerView.Adapter<VH>() {
 
@@ -9,6 +10,7 @@ abstract class SearchListAdapter<VH: RecyclerView.ViewHolder>: RecyclerView.Adap
         set(value) {
            field = value
             notifyDataSetChanged()
+            Log.d("testTag", "item size in list: ${value.size}")
         }
 
     interface SearchAdapterCallback {

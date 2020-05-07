@@ -2,13 +2,12 @@ package com.aba.core.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.aba.core.*
-import com.aba.core.domain.data.SearchModel
+import com.aba.core.domain.model.SearchModel
 import com.aba.core.domain.usecase.SearchUseCase
 import com.aba.core.network.ResultResponse
 import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.verify
 import io.reactivex.Observable
-import io.reactivex.observers.TestObserver
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test

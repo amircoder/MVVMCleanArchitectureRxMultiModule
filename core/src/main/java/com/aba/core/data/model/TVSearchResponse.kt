@@ -6,12 +6,10 @@ import androidx.room.Entity
 import com.aba.core.BuildConfig
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = BuildConfig.SEARCH_TABLE_NAME, primaryKeys = ["id"] )
 data class TVSearchResponse(
     @SerializedName("score")
     var score: Double ,
     @SerializedName("show")
-    @Embedded
     var show: Show
 ) {
     data class Show(
@@ -21,12 +19,10 @@ data class TVSearchResponse(
         var genres: List<String>? ,
         @SerializedName("id")
         var id: Int,
-        @Embedded
         @SerializedName("image")
-        var image: Image ,
+        var image: Image? ,
         @SerializedName("language")
         var language: String = "" ,
-        @Embedded
         @SerializedName("_links")
         var links: Links?,
         @SerializedName("name")
@@ -34,10 +30,9 @@ data class TVSearchResponse(
 //        @SerializedName("network")
 //        var network: Network? ,
         @SerializedName("officialSite")
-        var officialSite: String,
+        var officialSite: String?,
 //        @SerializedName("premiered")
 //        var premiered: String,
-        @Embedded
         @SerializedName("rating")
         var rating: Rating? ,
 //        @SerializedName("runtime")
@@ -94,9 +89,7 @@ data class TVSearchResponse(
 
     data class Links(
         @SerializedName("previousepisode")
-        @Embedded
         var previousepisode: PreviousEpisode ,
-        @Embedded
         @SerializedName("self")
         var self: Self
     )
