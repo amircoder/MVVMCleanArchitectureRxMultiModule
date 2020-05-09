@@ -7,6 +7,8 @@ import com.aba.core.data.mapper.SearchMapper
 import com.aba.core.data.remote.SearchRemoteDataSource
 import com.aba.core.domain.model.SearchModel
 import com.aba.core.network.ResultResponse
+import com.aba.core.rx.SchedulerProvider
+import com.aba.core.rx.TrampolineSchedulerProvider
 import com.nhaarman.mockitokotlin2.*
 import com.nhaarman.mockitokotlin2.any
 import io.reactivex.Observable
@@ -31,8 +33,10 @@ class SearchRepositoryImplTest {
     private lateinit var mockRemoteDataSource: SearchRemoteDataSource
     @Mock
     private lateinit var mockLocalDataSource: SearchLocalDataSource
-    @InjectMocks
     private lateinit var subject: SearchRepositoryImpl
+
+    private lateinit var schedulerProvider: SchedulerProvider
+
 
     @Rule
     lateinit var rule: InstantTaskExecutorRule
@@ -41,6 +45,11 @@ class SearchRepositoryImplTest {
 
     @Before
     fun setup() {
+        provideImmediateSchedulers()
+        subject = SearchRepositoryImpl(
+            mockRemoteDataSource,
+            mockLocalDataSource
+        )
     }
 
 
@@ -197,10 +206,11 @@ class SearchRepositoryImplTest {
     }
 
 
+
     /*
      * Helper
      */
-
-
-
+    private fun provideImmediateSchedulers() {
+        schedulerProvider = TrampolineSchedulerProvider()
+    }
 }

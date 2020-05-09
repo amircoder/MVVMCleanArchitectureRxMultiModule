@@ -9,6 +9,7 @@ import com.aba.core.network.ResultResponse
 import com.aba.core.network.error.ErrorContainer
 import com.aba.core.rx.SchedulerProvider
 import io.reactivex.Observable
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class SearchUseCase @Inject constructor(
@@ -21,7 +22,7 @@ class SearchUseCase @Inject constructor(
 
 
     override fun buildObservable(params: SearchParams): Observable<ResultResponse<List<SearchModel>>> =
-        searchRepository.search(params.query)
+        searchRepository.search(params.query).debounce(350, TimeUnit.MILLISECONDS)
 
 
     fun with(query: String) = SearchParams(query)

@@ -14,7 +14,7 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.MockitoAnnotations.initMocks
 
-class SearchListFragmentTestWE: FragmentTestBase<SearchListFragment>() {
+class SearchListFragmentTest: FragmentTestBase<SearchListFragment>() {
 
     private val mockViewModelFactory: ViewModelProvider.Factory = mock()
     private val mockViewModel: SearchViewModel = mock()

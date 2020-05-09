@@ -6,6 +6,6 @@ interface SchedulerProvider {
 
     val ioScheduler: Scheduler
     val mainScheduler: Scheduler
-
+    val computation: Scheduler
 
 }

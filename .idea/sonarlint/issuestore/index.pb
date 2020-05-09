@@ -185,8 +185,6 @@ Ncore/src/main/java/com/aba/core/data/local/datasource/SearchLocalDataSource.kt
 Vcore/src/test/java/com/aba/core/data/local/datasource/SearchLocalDataSourceImplTest.kt,5/2/525bae02fe8f8366daf8bbb95a01d7fa8e4a987b
 ‚
 Rcore/src/main/java/com/aba/core/data/local/datasource/SearchLocalDataSourceImpl.kt,d/e/dee27bb07a5c068fcf2b327b78d411c84e6c1f5e
-j
-:core/src/main/java/com/aba/core/domain/data/SearchModel.kt,5/3/53c1f69028ea5d046efd0bf3456fc33e9d3d84aa
 {
 Kcore/src/test/java/com/aba/core/data/repository/SearchRepositoryImplTest.kt,e/2/e293b939f27200d62a14dee91ae2b7c54ff8fdd2
 w
@@ -287,3 +285,11 @@ S
 #Search/src/main/AndroidManifest.xml,5/2/529ce551eecedbbb16206584c5c906a61a9e95bc
 d
 4core/src/main/java/com/aba/core/rx/ResultObserver.kt,7/a/7ae225be1f0e75da1005ab3a1929f3d64583d925
+k
+;core/src/main/java/com/aba/core/domain/model/SearchModel.kt,2/9/296c60b7a1d260b96652b08ecba55c8a428be251
+t
+Dcore/src/main/java/com/aba/core/data/local/model/LocalSearchModel.kt,0/5/05671fcdacd3e8ea071019a5acefaad5eae54a0f
+p
+@core/src/main/java/com/aba/core/data/mapper/LocalSearchMapper.kt,4/0/40451b130cbff4c762efe43bd8ade8d5a73a3e4e
+t
+Dcore/src/test/java/com/aba/core/data/mapper/LocalSearchMapperTest.kt,9/7/97f077ee153f5646d9bf321b61e91887e3064c88

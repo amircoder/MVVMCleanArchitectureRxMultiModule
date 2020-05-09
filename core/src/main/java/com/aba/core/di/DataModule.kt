@@ -11,6 +11,7 @@ import com.aba.core.data.remote.SearchRemoteDataSource
 import com.aba.core.data.remote.SearchRemoteDataSourceImpl
 import com.aba.core.data.repository.SearchRepositoryImpl
 import com.aba.core.domain.repository.SearchRepository
+import com.aba.core.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

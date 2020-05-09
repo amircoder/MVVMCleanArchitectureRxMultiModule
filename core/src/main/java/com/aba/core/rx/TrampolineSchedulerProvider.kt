@@ -8,5 +8,6 @@ class TrampolineSchedulerProvider: SchedulerProvider {
 
     override val ioScheduler: Scheduler = Schedulers.trampoline()
     override val mainScheduler: Scheduler = Schedulers.trampoline()
+    override val computation: Scheduler = Schedulers.trampoline()
 
 }

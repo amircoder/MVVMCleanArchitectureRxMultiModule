@@ -62,47 +62,47 @@ android {
     }
 
 
-//    flavorDimensions 'version', 'region'
-//    productFlavors {
-//        eu {
-//            dimension = "region"
-//            resValue "string", "app_name", "X Project for EU"
-//        }
-//
-//        usa {
-//            dimension = "region"
-//            resValue "string", "app_name", "X Project for USA"
-//        }
-//
-//        development {
-//            dimension = "version"
-//            resConfigs "en", "xxhdpi"
-////            resValue "string", "app_name", "Development Project x"
-//            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
-////            applicationId app.applicationId
-////            versionCode 1
-////            versionName '1.0.0'
-//        }
-//        play {
-//            dimension = "version"
-//            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
-////            resValue "string", "app_name", "Project x"
-////            applicationId app.applicationId
-////            versionCode 1
-////            versionName '1.0.0'
-//        }
-//    }
+    flavorDimensions 'version', 'region'
+    productFlavors {
+        eu {
+            dimension = "region"
+            resValue "string", "app_name", "X Project for EU"
+        }
 
-    // Travers through different flavors and do some operations like ignoring unwanted flavors
-    // or adding some configuration stuff into that like build config, resValues, etc.
-//    variantFilter { variant ->
-//        def names = variant.flavors*.name
-//        // To check for a build type instead, use variant.buildType.name == "buildType"
-//        if (names.contains("demo") || names.contains("mena")) {
-//            // Gradle ignores any variants that satisfy the conditions above.
-//            setIgnore(true)
-//        }
-//    }
+        usa {
+            dimension = "region"
+            resValue "string", "app_name", "X Project for USA"
+        }
+
+        development {
+            dimension = "version"
+            resConfigs "en", "xxhdpi"
+//            resValue "string", "app_name", "Development Project x"
+            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
+//            applicationId app.applicationId
+//            versionCode 1
+//            versionName '1.0.0'
+        }
+        play {
+            dimension = "version"
+            manifestPlaceholders = [deepLinkScheme : "projectxdevscheme", deepLinkHost : "deep.project.x"]
+//            resValue "string", "app_name", "Project x"
+//            applicationId app.applicationId
+//            versionCode 1
+//            versionName '1.0.0'
+        }
+    }
+
+//     Travers through different flavors and do some operations like ignoring unwanted flavors
+//     or adding some configuration stuff into that like build config, resValues, etc.
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        // To check for a build type instead, use variant.buildType.name == "buildType"
+        if (names.contains("demo") || names.contains("mena")) {
+            // Gradle ignores any variants that satisfy the conditions above.
+            setIgnore(true)
+        }
+    }
 
     // Sign in credentials
     // To change Sign in credentials go to keyStore.properties

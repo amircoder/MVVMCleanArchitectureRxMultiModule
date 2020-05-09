@@ -9,5 +9,6 @@ class TestSchedulerProvider : SchedulerProvider {
 
     override val ioScheduler: Scheduler = testScheduler
     override val mainScheduler: Scheduler = testScheduler
+    override val computation: Scheduler = testScheduler
 
 }

@@ -6,6 +6,7 @@ import com.aba.core.network.ResultResponse
 import com.aba.core.network.error.ErrorContainer
 import com.aba.core.rx.SchedulerProvider
 import io.reactivex.Observable
+import java.util.concurrent.TimeUnit
 
 abstract class ObservableUseCase<PARAMS : Params, result>
     (

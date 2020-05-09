@@ -29,6 +29,7 @@ class NetworkModule {
         OkHttpClient.Builder()
             .addInterceptor(NetworkInterceptor())
             .addInterceptor(ChuckInterceptor(context))
+            .cache(null)
             .readTimeout(DataConstants.Network.TIME_OUT.toLong(), TimeUnit.SECONDS)
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
