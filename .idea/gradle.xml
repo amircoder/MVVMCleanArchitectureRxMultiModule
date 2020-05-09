@@ -10,11 +10,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Search" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core-test" />
+            <option value="$PROJECT_DIR$/feature_detail" />
+            <option value="$PROJECT_DIR$/feature_search" />
             <option value="$PROJECT_DIR$/lib-theme" />
           </set>
         </option>

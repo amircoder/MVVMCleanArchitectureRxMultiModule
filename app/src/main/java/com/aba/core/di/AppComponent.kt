@@ -23,7 +23,8 @@ import javax.inject.Singleton
         DataModule::class,
         RxModule::class,
         MainActivityBinding::class,
-        SearchFragmentBinding::class
+        SearchFragmentBinding::class,
+        DetailFragmentBinding::class
     ]
 )
 interface AppComponent : AndroidInjector<DaggerApplication> {

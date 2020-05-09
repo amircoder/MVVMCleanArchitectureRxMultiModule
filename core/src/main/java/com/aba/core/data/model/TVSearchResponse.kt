@@ -1,9 +1,7 @@
 package com.aba.core.data.model
 
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import com.aba.core.BuildConfig
+
 import com.google.gson.annotations.SerializedName
 
 data class TVSearchResponse(

@@ -3,8 +3,9 @@ package com.aba.core.data.mapper
 import com.aba.core.base.LocalMapper
 import com.aba.core.data.local.model.LocalSearchModel
 import com.aba.core.domain.model.SearchModel
+import javax.inject.Inject
 
-class LocalSearchMapper: LocalMapper<List<LocalSearchModel>, List<SearchModel>> {
+class LocalSearchMapper @Inject constructor(): LocalMapper<List<LocalSearchModel>, List<SearchModel>> {
     override fun mapFromLocal(items: List<LocalSearchModel>): List<SearchModel> =
         mutableListOf<SearchModel>().apply {
             items.forEach { item ->

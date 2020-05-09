@@ -6,6 +6,7 @@ import com.aba.core.domain.repository.SearchRepository
 import com.aba.core.domain.usecase.SearchUseCase
 import com.aba.core.network.error.ErrorContainer
 import com.aba.core.rx.SchedulerProvider
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
@@ -25,5 +26,6 @@ class UseCaseModule  {
             schedulerProvider,
             errorContainer
         )
+
 
 }

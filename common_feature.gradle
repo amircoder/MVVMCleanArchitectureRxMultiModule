@@ -5,6 +5,7 @@ apply from: '../common.gradle'
 dependencies {
     api project(":core")
     testApi project(":core-test")
+    androidTestApi project(":core-test")
 
 }
 

@@ -46,7 +46,8 @@ android {
 
 dependencies {
     api project(":core")
-    implementation project(":Search")
+    implementation project(":feature_search")
+    implementation project(":feature_detail")
     testApi project(":core-test")
 
 }

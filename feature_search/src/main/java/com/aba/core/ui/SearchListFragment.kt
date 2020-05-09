@@ -3,6 +3,7 @@ package com.aba.core.ui
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.aba.core.domain.model.SearchModel
+import com.aba.core.extension.getNavigatorActivity
 import com.aba.core.extension.observeLiveData
 import com.aba.core.extension.setupLinearLayout
 import com.aba.core.extension.toastIt
@@ -82,6 +83,7 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
     }
 
     override fun onSearchItem(item: SearchModel) {
+        getNavigatorActivity().navigateToDetail()
     }
 
 
