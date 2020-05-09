@@ -24,9 +24,5 @@ class AndroidModule {
 
     @Provides
     @Singleton
-    fun provideFragmentNavigation(): FragmentNavigationHelper = AppFragmentNavigationHelper()
-
-    @Provides
-    @Singleton
     fun provideTheme(): ThemeProvider = AppThemeProvider()
 }

@@ -1,4 +1,11 @@
 package com.aba.core.navigation
 
-class AppFragmentNavigationHelper: FragmentNavigationHelper {
+
+
+import javax.inject.Inject
+
+class AppFragmentNavigationHelper @Inject constructor(
+): FragmentNavigationHelper {
+    override fun navigateToDetail() {
+    }
 }

@@ -4,6 +4,7 @@ import com.aba.core.view.ErrorSuccessFragment
 import com.aba.detail.R
 
 class DetailFragment: ErrorSuccessFragment() {
+
     override fun initView() {
 
     }

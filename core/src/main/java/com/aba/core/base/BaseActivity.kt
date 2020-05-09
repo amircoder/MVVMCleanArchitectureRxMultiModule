@@ -18,9 +18,6 @@ abstract class BaseActivity: DaggerAppCompatActivity(), HasSupportFragmentInject
     @Inject
     lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
-    @Inject
-    lateinit var fragmentNavigator: FragmentNavigationHelper
-
     protected abstract val contentResourceId: Int
 
 
