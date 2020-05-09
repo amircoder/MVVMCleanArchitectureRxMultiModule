@@ -1,10 +1,11 @@
 package com.aba.core.data.mapper
 
+import com.aba.core.base.LocalMapper
 import com.aba.core.data.local.model.LocalSearchModel
 import com.aba.core.domain.model.SearchModel
 
-class LocalSearchMapper {
-    fun mapFromLocal(items: List<LocalSearchModel>): List<SearchModel> =
+class LocalSearchMapper: LocalMapper<List<LocalSearchModel>, List<SearchModel>> {
+    override fun mapFromLocal(items: List<LocalSearchModel>): List<SearchModel> =
         mutableListOf<SearchModel>().apply {
             items.forEach { item ->
                 add(
@@ -26,7 +27,7 @@ class LocalSearchMapper {
             }
         }
 
-    fun mapToLocal(items: List<SearchModel>): List<LocalSearchModel> =
+    override fun mapToLocal(items: List<SearchModel>): List<LocalSearchModel> =
         mutableListOf<LocalSearchModel>().apply {
             items.forEach { item ->
                 add(

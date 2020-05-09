@@ -1,12 +1,13 @@
 package com.aba.core.data.mapper
 
+import com.aba.core.base.Mapper
 import com.aba.core.data.model.TVSearchResponse
 import com.aba.core.domain.model.SearchModel
 import javax.inject.Inject
 
-class SearchMapper @Inject constructor() {
+class SearchMapper @Inject constructor(): Mapper<List<TVSearchResponse>, List<SearchModel>> {
 
-    fun map(items: List<TVSearchResponse>): List<SearchModel> =
+    override fun map(items: List<TVSearchResponse>): List<SearchModel> =
         mutableListOf<SearchModel>().apply {
             items.forEach { item ->
                 with(item.show) {
