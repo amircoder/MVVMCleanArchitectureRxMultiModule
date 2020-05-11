@@ -7,6 +7,7 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.aba.core.domain.model.SearchModel
 import com.aba.core.extension.*
+import com.aba.core.navigation.NavigationKeys
 import com.aba.core.network.ResultResponse
 import com.aba.core.network.util.ImageLoader
 import com.aba.core.ui.list.SearchItemViewHolder
@@ -83,7 +84,11 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
     }
 
     override fun onSearchItem(item: SearchModel, view: View) {
-        getNavigatorActivity().navigateToDetail(FragmentNavigatorExtras(
+        getNavigatorActivity().navigateToDetail(
+            Bundle().apply {
+                putParcelable(NavigationKeys.TV_INFO_KEY, item)
+            },
+            FragmentNavigatorExtras(
             view to "title"
         ))
     }

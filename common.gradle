@@ -66,12 +66,12 @@ android {
     productFlavors {
         eu {
             dimension = "region"
-            resValue "string", "app_name", "X Project for EU"
+            resValue "string", "app_name", "TV Maze"
         }
 
         usa {
             dimension = "region"
-            resValue "string", "app_name", "X Project for USA"
+            resValue "string", "app_name", "TV Maze Client"
         }
 
         development {
