@@ -21,5 +21,4 @@ sealed class ResultResponse<T> {
 
 
 
-
 }

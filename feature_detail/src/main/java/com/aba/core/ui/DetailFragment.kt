@@ -5,8 +5,8 @@ import com.aba.detail.R
 
 class DetailFragment: ErrorSuccessFragment() {
 
-    override fun initView() {
 
+    override fun initView() {
     }
 
     override fun initViewListeners() {

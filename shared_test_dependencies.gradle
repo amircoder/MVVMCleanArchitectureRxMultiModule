@@ -48,6 +48,10 @@ dependencies {
 
     testImplementation okhttpMockServer.mockWebServer
 
+    // Live Data test
+    testImplementation liveDataTest.live_data_test
+
+
 }
 
 

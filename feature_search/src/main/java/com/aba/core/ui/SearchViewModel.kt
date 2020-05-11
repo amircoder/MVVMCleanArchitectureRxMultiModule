@@ -1,6 +1,5 @@
 package com.aba.core.ui
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.aba.core.base.BaseViewModel
 import com.aba.core.domain.model.SearchModel
@@ -14,14 +13,14 @@ class SearchViewModel @Inject constructor(
     private val searchUseCase: SearchUseCase
 ) : BaseViewModel() {
 
-    val searchLiveData: LiveData<ResultResponse<List<SearchModel>>>
+    val searchLiveData: MutableLiveData<ResultResponse<List<SearchModel>>>
         get() = _searchLiveData
     private val _searchLiveData = MutableLiveData<ResultResponse<List<SearchModel>>>()
 
     fun search(query: String) {
          this += searchUseCase.execute(searchUseCase.with(query))
             .subscribeWith(ResultSubscriber(_searchLiveData) { liveData ->
-                // starting result
+                // starts with
                 liveData.postValue(ResultResponse.Loading())
             })
 

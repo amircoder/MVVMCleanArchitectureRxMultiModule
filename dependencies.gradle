@@ -178,3 +178,8 @@ ext.okhttp_interceptor = [
 ext.okhttpMockServer = [
         "mockWebServer" : "com.squareup.okhttp3:mockwebserver:$okhttp"
 ]
+
+def liveDataTest = "1.1.2"
+ext.liveDataTest = [
+        "live_data_test" : "com.jraska.livedata:testing-ktx:$liveDataTest"
+]
