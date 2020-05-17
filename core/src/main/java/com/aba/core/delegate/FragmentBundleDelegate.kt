@@ -7,9 +7,5 @@ import kotlin.reflect.KProperty
 
 class FragmentBundleDelegate(private val key: String): ReadOnlyProperty<Fragment, SearchModel?> {
     override fun getValue(thisRef: Fragment, property: KProperty<*>): SearchModel? =
-        thisRef.arguments?.run {
-            getParcelable<SearchModel>(key)
-        }
-
-
+        thisRef.arguments?.getParcelable(key)
 }

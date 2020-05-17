@@ -37,6 +37,17 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
     override val contentResourceId: Int
         get() = R.layout.search_fragment
 
+    override fun onSearchItem(item: SearchModel, view: View) {
+        getNavigatorActivity().navigateToDetail(
+            Bundle().apply {
+                putParcelable(NavigationKeys.TV_INFO_KEY, item)
+            },
+            FragmentNavigatorExtras(
+                view to "title"
+            )
+        )
+    }
+
     override fun initView() {
         searchList.setupLinearLayout(adapter)
     }
@@ -46,6 +57,10 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
             showLoadingSpinner()
             viewModel.search(searchBox.text.toString())
         }
+
+        searchList.setupOnScrollOperations(
+            { searchSubmit.smoothHide() },
+            { searchSubmit.smoothUncover() })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,15 +98,7 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
         adapter.searchItems = data
     }
 
-    override fun onSearchItem(item: SearchModel, view: View) {
-        getNavigatorActivity().navigateToDetail(
-            Bundle().apply {
-                putParcelable(NavigationKeys.TV_INFO_KEY, item)
-            },
-            FragmentNavigatorExtras(
-            view to "title"
-        ))
-    }
+
 
 
 }

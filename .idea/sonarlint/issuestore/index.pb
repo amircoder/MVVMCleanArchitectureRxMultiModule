@@ -303,3 +303,9 @@ o
 ?core/src/main/java/com/aba/core/navigation/NavigatorActivity.kt,a/e/ae538e1ac6d4b1cb4a2fc3e467b05a3d3353af5d
 r
 Bfeature_search/src/main/java/com/aba/core/ui/SearchListFragment.kt,6/3/63880ba591ec7eb824de7d736c6aba58e84fc509
+v
+Ffeature_search/src/main/java/com/aba/core/ui/list/SearchListAdapter.kt,b/2/b2fd1f77587db8695217f961a7e622a3ac2856ac
+l
+<core/src/main/java/com/aba/core/navigation/NavigationKeys.kt,1/e/1e2ea270a0b55858f2fff376b8ee1be5073c3c44
+r
+Bcore/src/main/java/com/aba/core/delegate/FragmentBundleDelegate.kt,e/b/eb10bfaeb2b924f34235dfa7320db11a82e1de38

@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 class AppFragmentNavigationHelper @Inject constructor(
 ): FragmentNavigationHelper {
-    override fun navigateToDetail() {
-    }
+
+    
 }
