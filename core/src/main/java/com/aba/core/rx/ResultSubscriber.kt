@@ -18,6 +18,7 @@ class ResultSubscriber<T>(
     }
 
     override fun onError(e: Throwable) {
+        // No error expected as the error handling is implemented in the use case class
         Log.e("error", "Some error happened $e")
     }
 

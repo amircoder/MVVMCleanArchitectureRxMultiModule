@@ -27,9 +27,9 @@ class SearchItemViewHolder(override val containerView: View,
     }
 
     fun bindView(item: SearchModel){
-        itemView.searchTitle.text = item.name
+        itemView.title.text = item.name
         itemView.setOnClickListener {
-            callback.onSearchItem(item)
+            callback.onSearchItem(item, itemView.title)
         }
     }
 

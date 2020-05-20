@@ -8,6 +8,11 @@ android {
         buildConfigField("String", "TERMS_AND_CONDITIONS_LINK", "${sharedProperties['termsAndConditionsLink']}")
         buildConfigField("String", "DB_NAME", "${sharedProperties['dataBaseName']}")
         buildConfigField("String", "SEARCH_TABLE_NAME", "${sharedProperties['SEARCH_TABLE_NAME']}")
+        buildConfigField("long", "TRANSITION_DURATION", "${sharedProperties['TRANSITION_DURATION']}")
+        buildConfigField("long", "TRANSITION_MOVE_DURATION", "${sharedProperties['TRANSITION_MOVE_DURATION']}")
+        buildConfigField("long", "QUICK_ANIMATION_DURATION", "${sharedProperties['QUICK_ANIMATION_DURATION']}")
+        buildConfigField("long", "NORMAL_ANIMATION_DURATION", "${sharedProperties['NORMAL_ANIMATION_DURATION']}")
+        buildConfigField("long", "LONG_ANIMATION_DURATION", "${sharedProperties['LONG_ANIMATION_DURATION']}")
 
     }
 }

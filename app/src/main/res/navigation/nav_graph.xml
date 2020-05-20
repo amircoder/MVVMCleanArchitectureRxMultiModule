@@ -10,7 +10,11 @@
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/anim_enter_slide_up"
+            app:exitAnim="@anim/anim_exit_slide_down"
+            app:popEnterAnim="@anim/anim_enter_slide_up"
+            app:popExitAnim="@anim/anim_exit_slide_down"/>
     </fragment>
 
     <fragment

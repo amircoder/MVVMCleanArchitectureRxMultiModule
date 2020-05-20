@@ -1,6 +1,7 @@
 package com.aba.core.ui.list
 
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.aba.core.domain.model.SearchModel
 
@@ -14,7 +15,7 @@ abstract class SearchListAdapter<VH: RecyclerView.ViewHolder>: RecyclerView.Adap
         }
 
     interface SearchAdapterCallback {
-        fun onSearchItem(item: SearchModel)
+        fun onSearchItem(item: SearchModel, view: View)
     }
 
 }

@@ -14,13 +14,33 @@
             android:propertyName="elevation"
             android:valueTo="3.0dp"
             android:valueType="floatType" />
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="scaleX"
+            android:valueTo="1.2"
+            android:valueType="floatType" />
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="scaleY"
+            android:valueTo="1.2"
+            android:valueType="floatType" />
     </item>
 
     <item>
         <objectAnimator
             android:duration="@android:integer/config_shortAnimTime"
             android:propertyName="elevation"
-            android:valueTo="1.5dp"
+            android:valueTo="0"
+            android:valueType="floatType" />
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="scaleX"
+            android:valueTo="1.0"
+            android:valueType="floatType" />
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="scaleY"
+            android:valueTo="1.0"
             android:valueType="floatType" />
     </item>
 </selector>

@@ -1,12 +1,13 @@
 package com.aba.core.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.aba.core.domain.model.SearchModel
-import com.aba.core.extension.getNavigatorActivity
-import com.aba.core.extension.observeLiveData
-import com.aba.core.extension.setupLinearLayout
-import com.aba.core.extension.toastIt
+import com.aba.core.extension.*
+import com.aba.core.navigation.NavigationKeys
 import com.aba.core.network.ResultResponse
 import com.aba.core.network.util.ImageLoader
 import com.aba.core.ui.list.SearchItemViewHolder
@@ -36,6 +37,17 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
     override val contentResourceId: Int
         get() = R.layout.search_fragment
 
+    override fun onSearchItem(item: SearchModel, view: View) {
+        getNavigatorActivity().navigateToDetail(
+            Bundle().apply {
+                putParcelable(NavigationKeys.TV_INFO_KEY, item)
+            },
+            FragmentNavigatorExtras(
+                view to "title"
+            )
+        )
+    }
+
     override fun initView() {
         searchList.setupLinearLayout(adapter)
     }
@@ -45,6 +57,10 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
             showLoadingSpinner()
             viewModel.search(searchBox.text.toString())
         }
+
+        searchList.setupOnScrollOperations(
+            { searchSubmit.smoothHide() },
+            { searchSubmit.smoothUncover() })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,9 +98,7 @@ class SearchListFragment : ErrorSuccessFragment(), SearchListAdapter.SearchAdapt
         adapter.searchItems = data
     }
 
-    override fun onSearchItem(item: SearchModel) {
-        getNavigatorActivity().navigateToDetail()
-    }
+
 
 
 }

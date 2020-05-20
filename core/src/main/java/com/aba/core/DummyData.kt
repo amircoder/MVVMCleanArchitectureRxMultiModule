@@ -3,6 +3,7 @@ package com.aba.core
 import com.aba.core.data.local.model.LocalSearchModel
 import com.aba.core.data.model.TVSearchResponse
 import com.aba.core.domain.model.SearchModel
+import com.aba.core.network.ResultResponse
 import com.aba.core.network.error.ErrorEntity
 import java.util.*
 
@@ -161,3 +162,8 @@ val SOME_OTHER_LOCAL_SEARCH_MODELS: MutableList<LocalSearchModel> = Collections.
 
 
 val SOME_ERROR_ENTITY = ErrorEntity.Network
+
+
+val SOME_LOADING_RESULT = ResultResponse.Loading<List<SearchModel>>()
+val SOME_SUCCESS_RESULT = ResultResponse.Success(SOME_SEARCH_MODELS)
+val SOME_FAILURE_RESULT = ResultResponse.Failure<List<SearchModel>>(SOME_ERROR_ENTITY)

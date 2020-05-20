@@ -11,10 +11,9 @@ class SearchRemoteDataSourceImpl @Inject constructor(
     private val service: TVMazeService,
     private val mapper: SearchMapper
 ) : SearchRemoteDataSource {
-    override fun search(query: String): Observable<List<SearchModel>> {
-        return service.search(query)
+    override fun search(query: String): Observable<List<SearchModel>> =
+        service.search(query)
             .flatMap {
                 Observable.just(mapper.map(it))
             }
-    }
 }

@@ -19,17 +19,17 @@ android {
         }
     }
 
-//    productFlavors {
-//        eu {
-//            applicationIdSuffix ".eu"
-//            versionNameSuffix "-eu"
-//        }
-//
-//        usa {
-//            applicationIdSuffix ".usa"
-//            versionNameSuffix "-usa"
-//        }
-//
+    productFlavors {
+        eu {
+            applicationIdSuffix ".eu"
+            versionNameSuffix "-eu"
+        }
+
+        usa {
+            applicationIdSuffix ".usa"
+            versionNameSuffix "-usa"
+        }
+
 //        development {
 //            applicationIdSuffix ".dev"
 //            versionNameSuffix "-dev"
@@ -38,8 +38,8 @@ android {
 //            applicationIdSuffix ".release"
 //            versionNameSuffix "-release"
 //        }
-//
-//    }
+
+    }
 
 }
 
