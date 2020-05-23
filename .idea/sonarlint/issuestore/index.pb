@@ -311,3 +311,5 @@ r
 Bcore/src/main/java/com/aba/core/delegate/FragmentBundleDelegate.kt,e/b/eb10bfaeb2b924f34235dfa7320db11a82e1de38
 u
 Efeature_search/src/main/java/com/aba/core/di/SearchFragmentBinding.kt,7/1/71c248dd5f7d476444fe4c36f5f89ba94ef76fb6
+Y
+)app/src/main/res/layout/activity_main.xml,7/6/76b07e40f24cce093536731477540f12e7da3cb6
